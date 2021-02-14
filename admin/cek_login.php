@@ -1,12 +1,20 @@
 <?php
 
+// membuat koneksi ke database
+ try {
+    $koneksi = new PDO("mysql:host=localhost; port=3306; dbname=kelompok1", "root", "");
+    $koneksi->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // print("Berhasil cukk");
+} catch (PDOexception $e) {
+    print ("koneksi bermasalah ".$e->getMessage());
+}
+
 // menangkap varibel dari form index.php
  $username = $_POST['username'];
  $password = $_POST['password'];
 
 
-
-    $query = $konek->prepare("SELECT * FROM admin WHERE username=:user AND password=:pass");
+    $query = $koneksi->prepare("SELECT * FROM admin WHERE username=:user AND password=:pass");
     $query->execute([':user'=>$username, ':pass'=>$password]);
 
     $row = $query->fetch();
@@ -20,4 +28,8 @@
     }else{
         header("location:index.php");
     }
+
+
+
+
 ?>

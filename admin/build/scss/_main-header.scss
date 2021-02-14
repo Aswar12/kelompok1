@@ -1,7 +1,7 @@
 //
 // Component: Main Header
 //
- 
+
 .main-header {
   border-bottom: $main-header-bottom-border;
   z-index: $zindex-main-header;
@@ -17,12 +17,12 @@
       height: $nav-link-sm-height;
       padding: $nav-link-sm-padding-y $nav-link-padding-x;
 
-      > .fa,
-      > .fas,
-      > .far,
-      > .fab,
-      > .glyphicon,
-      > .ion {
+      >.fa,
+      >.fas,
+      >.far,
+      >.fab,
+      >.glyphicon,
+      >.ion {
         font-size: $font-size-sm;
       }
     }
@@ -37,7 +37,7 @@
     &[class*='-right'] {
       .dropdown-menu {
         left: auto;
-        margin-top: -3px;
+        margin-top: -5px;
         right: 0;
 
         @media (max-width: breakpoint-max(xs)) {
@@ -73,7 +73,7 @@
 .form-control-navbar {
   border-right-width: 0;
 
-  & + .input-group-append {
+  &+.input-group-append {
     margin-left: 0;
   }
 }
@@ -84,6 +84,7 @@
 }
 
 .navbar-dark {
+
   .form-control-navbar,
   .btn-navbar {
     background-color: $main-header-dark-form-control-bg;
@@ -95,13 +96,14 @@
       color: $main-header-dark-placeholder-color;
     }
 
-    + .input-group-append > .btn-navbar {
+    +.input-group-append>.btn-navbar {
       color: $main-header-dark-placeholder-color;
     }
 
     &:focus {
+
       &,
-      & + .input-group-append .btn-navbar {
+      &+.input-group-append .btn-navbar {
         background-color: $main-header-dark-form-control-focused-bg;
         border: $main-header-dark-form-control-focused-border !important;
         color: $main-header-dark-form-control-focused-color;
@@ -111,6 +113,7 @@
 }
 
 .navbar-light {
+
   .form-control-navbar,
   .btn-navbar {
     background-color: $main-header-light-form-control-bg;
@@ -122,13 +125,14 @@
       color: $main-header-light-placeholder-color;
     }
 
-    + .input-group-append > .btn-navbar {
+    +.input-group-append>.btn-navbar {
       color: $main-header-light-placeholder-color;
     }
 
     &:focus {
+
       &,
-      & + .input-group-append .btn-navbar {
+      &+.input-group-append .btn-navbar {
         background-color: $main-header-light-form-control-focused-bg;
         border: $main-header-light-form-control-focused-border !important;
         color: $main-header-light-form-control-focused-color;
