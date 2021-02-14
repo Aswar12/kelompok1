@@ -9,13 +9,17 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+        <?php
+        $query = mysqli_query($konek, "SELECT * FROM admin WHERE username = '".$id."'");
+        $data = mysqli_fetch_array($query);
+        ?>
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">admin</a>
+          <a href="#" class="d-block"> <?php echo $data['nm_lengkap']; ?></a>
         </div>
       </div>
 
