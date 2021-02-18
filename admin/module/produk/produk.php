@@ -35,9 +35,6 @@ $aksi="module/produk/aksi_produk.php";
 		echo"<form action='$aksi?module=produk&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
-					<td>Id Produk</td> <td><input class='form-control' type=text name=id_produk></td>
-				</tr>
-				<tr>
 					<td>Id Kategori</td> <td><input class='form-control' type=text name=id_kategori></td>
 				</tr>
 				<tr>
