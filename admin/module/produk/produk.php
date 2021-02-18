@@ -1,7 +1,7 @@
 <?php
 $aksi="module/produk/aksi_produk.php";
 
-	switch($_GET[act])
+	switch($_GET['act'])
 	{
 
 	default:
@@ -10,7 +10,7 @@ $aksi="module/produk/aksi_produk.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>id produk</th> <th>id kategori</th> <th>Nama produk</th> <th>deskripsi</th> <th>gambar</th> <th>ukuran</th> <th>harga</th> <th>stok</th> <th>nama kategori</th> <th>Aksi</th>
+				<th>NO</th> <th>Nama produk</th> <th>Deskripsi</th> <th>Gambar</th> <th>Ukuran</th> <th>Harga</th> <th>Stok</th> <th>Nama kategori</th> <th>Pilihan</th>
 			
 			</tr></thead>";
 			$no=0;
@@ -35,15 +35,32 @@ $aksi="module/produk/aksi_produk.php";
 		echo"<form action='$aksi?module=produk&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
-					<td>id_produk</td> <td><input class='form-control' type=text name=id_produk></td>
+					<td>Id Produk</td> <td><input class='form-control' type=text name=id_produk></td>
 				</tr>
 				<tr>
-					<td>id_kategori</td> <td><input class='form-control' type=text name=id_kategori></td>
+					<td>Id Kategori</td> <td><input class='form-control' type=text name=id_kategori></td>
 				</tr>
 				<tr>
-					<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nm_lengkap></td>
+					<td>Nama Produk</td> <td><input  class='form-control' type=text name=nm_produk></td>
 				</tr>
 				<tr>
+					<td>Deskripsi</td> <td><input class='form-control' type=text name=deskripsi></td>
+				</td>
+				<tr>
+				<td>Gambar</td> <td><input class='form-control' type=file name=gambar></td>
+				</tr>
+				<tr>
+				<td>Ukuran</td> <td><input class='form-control' type=text name=ukuran></td>
+				</tr>
+				<tr>
+				<td>Harga</td> <td><input class='form-control' type=text name=harga></td>
+				</tr>			
+				<tr>
+				<td>Stok</td> <td><input class='form-control' type=text name=stok></td>
+				</tr>
+				<tr>
+				<td>Nama Kategori</td> <td><input class='form-control' type=text name=nm_kategori></td>
+				</tr>
 					<td></td>
 					<td>
 						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
