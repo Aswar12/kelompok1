@@ -34,9 +34,17 @@ $aksi="module/produk/aksi_produk.php";
 	case "tambahdata":
 		echo"<form action='$aksi?module=produk&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
-				<tr>
-					<td>Id Kategori</td> <td><input class='form-control' type=text name=id_kategori></td>
-				</tr>
+			<tr>
+			<td>Id Kategori</td> 
+			<td><select name=id_kategori>
+					<option value='null'>Silahkan Pilih Kategori</option>";
+					$data = mysqli_query($konek,"SELECT * FROM kategori");
+					while($r = mysqli_fetch_array($data)){
+					echo"<option value='$r[id_kategori]'> $r[id_kategori]</option>";
+					}
+				echo "</select>
+			</td>
+			</tr>
 				<tr>
 					<td>Nama Produk</td> <td><input  class='form-control' type=text name=nm_produk></td>
 				</tr>
@@ -47,7 +55,24 @@ $aksi="module/produk/aksi_produk.php";
 				<td>Gambar</td> <td><input class='form-control' type=file name=gambar></td>
 				</tr>
 				<tr>
-				<td>Ukuran</td> <td><input class='form-control' type=text name=ukuran></td>
+				<td>Ukuran Pakaian</td>
+					<td>
+						<input type=radio name=ukuran value=S checked>S
+						<input type=radio name=ukuran value=M checked>M
+						<input type=radio name=ukuran value=L checked>L
+						<input type=radio name=ukuran value=XL checked>XL
+						<input type=radio name=ukuran value=XXl checked>XXl
+					</td>
+				</tr>
+				<tr>
+				<td>Ukuran Sepatu</td>
+					<td>
+						<input class='form-control' type=radio name=ukuran value=36 checked>36
+						<input type=radio name=ukuran value=37 checked>37
+						<input type=radio name=ukuran value=38 checked>38
+						<input type=radio name=ukuran value=39 checked>39
+						<input type=radio name=ukuran value=40 checked>40
+					</td>
 				</tr>
 				<tr>
 				<td>Harga</td> <td><input class='form-control' type=text name=harga></td>

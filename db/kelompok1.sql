@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Feb 2021 pada 08.16
+-- Waktu pembuatan: 19 Feb 2021 pada 22.52
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.28
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `klmpk1`
+-- Database: `kelompok1`
 --
 
 -- --------------------------------------------------------
@@ -33,8 +33,19 @@ CREATE TABLE `admin` (
   `password` varchar(20) NOT NULL,
   `nm_lengkap` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `alamat` text NOT NULL
+  `alamat` text NOT NULL,
+  `foto` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`username`, `password`, `nm_lengkap`, `email`, `alamat`, `foto`) VALUES
+('Aswar12', 'aswar12', 'Aswar Sumarlin', 'aswarsumarlin@gmail.com', 'jl. segeri', 'aswar.jpg'),
+('firman', 'firman', 'firmansyah', 'firmansyah@gmail.com', 'jl. Paccerakkang', 'firman.jpg'),
+('rany', 'rany', 'rany m pettasolong', 'rany@gmail.com', 'jl. Paccerakkang', 'rany.jpg'),
+('fitri', 'fitri', 'fitri amelia mansyur', 'fitri@gmail.com', 'jl. Paccerakkang', 'fitri.jpg');
 
 -- --------------------------------------------------------
 
@@ -44,20 +55,20 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `det_pembelian` (
   `id_detpembelian` int(10) NOT NULL,
+  `id_keranjang` int(10) NOT NULL,
   `id_pembeli` int(10) NOT NULL,
-  `id_produk` int(10) NOT NULL,
   `id_kecamatan` int(10) NOT NULL,
-  `nm_produk` varchar(50) NOT NULL,
-  `harga` double(10,2) NOT NULL,
-  `jumlah` int(10) NOT NULL,
   `alamat` text NOT NULL,
   `status` enum('baru','lama','terkirim') NOT NULL DEFAULT 'baru',
-  `tgl_pembelian` date NOT NULL,
-  `provinsi` varchar(20) NOT NULL,
-  `kota` varchar(20) NOT NULL,
-  `kecamatan` varchar(20) NOT NULL,
-  `harga_ongkir` double(10,2) NOT NULL
+  `tgl_pembelian` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `det_pembelian`
+--
+
+INSERT INTO `det_pembelian` (`id_detpembelian`, `id_keranjang`, `id_pembeli`, `id_kecamatan`, `alamat`, `status`, `tgl_pembelian`) VALUES
+(1, 1, 1, 1, 'jl. paccerakkang', 'baru', '2021-02-20');
 
 -- --------------------------------------------------------
 
@@ -70,6 +81,15 @@ CREATE TABLE `kategori` (
   `nm_kategori` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nm_kategori`) VALUES
+(1, 'Baju'),
+(2, 'Celana'),
+(3, 'Sepatu');
+
 -- --------------------------------------------------------
 
 --
@@ -80,8 +100,15 @@ CREATE TABLE `kecamatan` (
   `id_kecamatan` int(10) NOT NULL,
   `id_kota` int(10) NOT NULL,
   `nm_kecamatan` varchar(20) NOT NULL,
-  `harga_ongkir` double(10,2) NOT NULL
+  `harga_ongkir` double(10,3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kecamatan`
+--
+
+INSERT INTO `kecamatan` (`id_kecamatan`, `id_kota`, `nm_kecamatan`, `harga_ongkir`) VALUES
+(1, 1, 'Biring Kanaya', 20.000);
 
 -- --------------------------------------------------------
 
@@ -98,6 +125,13 @@ CREATE TABLE `keranjang` (
   `tgl_keranjang` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `keranjang`
+--
+
+INSERT INTO `keranjang` (`id_keranjang`, `id_produk`, `nm_produk`, `harga`, `jumlah`, `tgl_keranjang`) VALUES
+(1, 1, 'YUDA Z Basic Sweater', 79, 1, '2021-02-20');
+
 -- --------------------------------------------------------
 
 --
@@ -109,6 +143,13 @@ CREATE TABLE `kota` (
   `id_provinsi` int(10) NOT NULL,
   `nm_kota` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kota`
+--
+
+INSERT INTO `kota` (`id_kota`, `id_provinsi`, `nm_kota`) VALUES
+(1, 1, 'Makassar');
 
 -- --------------------------------------------------------
 
@@ -122,6 +163,13 @@ CREATE TABLE `pembeli` (
   `email` varchar(50) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembeli`
+--
+
+INSERT INTO `pembeli` (`id_pembeli`, `nm_pembeli`, `email`, `alamat`) VALUES
+(1, 'rany', 'rany@GMAIL.COM', 'jl. paccerakkang');
 
 -- --------------------------------------------------------
 
@@ -148,11 +196,19 @@ CREATE TABLE `produk` (
   `nm_produk` varchar(50) NOT NULL,
   `deskripsi` varchar(50) NOT NULL,
   `gambar` varchar(20) NOT NULL,
-  `ukuran` enum('S','L','M','X','XXL') NOT NULL DEFAULT 'S',
-  `harga` double(10,2) NOT NULL,
+  `ukuran` enum('S','L','M','XL','XXL') NOT NULL DEFAULT 'S',
+  `ukuran_sepatu` enum('36','37','38','39','40') NOT NULL DEFAULT '39',
+  `harga` double(10,3) NOT NULL,
   `stok` int(10) NOT NULL,
   `nm_kategori` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `produk`
+--
+
+INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `ukuran_sepatu`, `harga`, `stok`, `nm_kategori`) VALUES
+(1, 1, 'YUDA Z Basic Sweater', 'nyaman dipakai bahannya halus dan murah', 'yuda.jpg', 'L', '39', 79.000, 10, 'Baju');
 
 -- --------------------------------------------------------
 
@@ -166,6 +222,13 @@ CREATE TABLE `provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `provinsi`
+--
+
+INSERT INTO `provinsi` (`id_provisi`, `nm_provinsi`) VALUES
+(1, 'Sulawesi Selatan');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -175,8 +238,8 @@ CREATE TABLE `provinsi` (
 ALTER TABLE `det_pembelian`
   ADD PRIMARY KEY (`id_detpembelian`),
   ADD KEY `id_pembeli` (`id_pembeli`),
-  ADD KEY `id_produk` (`id_produk`),
-  ADD KEY `id_kecamatan` (`id_kecamatan`);
+  ADD KEY `id_kecamatan` (`id_kecamatan`),
+  ADD KEY `id_keranjang` (`id_keranjang`);
 
 --
 -- Indeks untuk tabel `kategori`
@@ -222,8 +285,7 @@ ALTER TABLE `penilaian`
 -- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`),
-  ADD KEY `id_kategori` (`id_kategori`);
+  ADD PRIMARY KEY (`id_produk`);
 
 --
 -- Indeks untuk tabel `provinsi`
@@ -239,37 +301,37 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT untuk tabel `det_pembelian`
 --
 ALTER TABLE `det_pembelian`
-  MODIFY `id_detpembelian` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detpembelian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
-  MODIFY `id_kecamatan` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kecamatan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_keranjang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kota` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembeli`
 --
 ALTER TABLE `pembeli`
-  MODIFY `id_pembeli` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembeli` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `penilaian`
@@ -281,13 +343,13 @@ ALTER TABLE `penilaian`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
-  MODIFY `id_provisi` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_provisi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -298,14 +360,8 @@ ALTER TABLE `provinsi`
 --
 ALTER TABLE `det_pembelian`
   ADD CONSTRAINT `det_pembelian_ibfk_1` FOREIGN KEY (`id_pembeli`) REFERENCES `pembeli` (`id_pembeli`),
-  ADD CONSTRAINT `det_pembelian_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`),
-  ADD CONSTRAINT `det_pembelian_ibfk_3` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id_kecamatan`);
-
---
--- Ketidakleluasaan untuk tabel `kategori`
---
-ALTER TABLE `kategori`
-  ADD CONSTRAINT `kategori_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `produk` (`id_kategori`);
+  ADD CONSTRAINT `det_pembelian_ibfk_3` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id_kecamatan`),
+  ADD CONSTRAINT `det_pembelian_ibfk_4` FOREIGN KEY (`id_keranjang`) REFERENCES `keranjang` (`id_keranjang`);
 
 --
 -- Ketidakleluasaan untuk tabel `kecamatan`
@@ -330,12 +386,6 @@ ALTER TABLE `kota`
 --
 ALTER TABLE `penilaian`
   ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`id_pembeli`) REFERENCES `pembeli` (`id_pembeli`);
-
---
--- Ketidakleluasaan untuk tabel `produk`
---
-ALTER TABLE `produk`
-  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
