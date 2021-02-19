@@ -141,7 +141,7 @@ $aksi="module/produk/aksi_produk.php";
 					<tr>
 					<td>Ukuran Sepatu</td>
 						<td>
-							<input class='form-control' type=radio name=ukuran value=36 checked>36
+							<input type=radio name=ukuran value=36 checked>36
 							<input type=radio name=ukuran value=37 checked>37
 							<input type=radio name=ukuran value=38 checked>38
 							<input type=radio name=ukuran value=39 checked>39
