@@ -22,7 +22,7 @@ $aksi="module/kategori/aksi_kategori.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_kategori]</td>
 				<td> 
-					<a href='?module=kategori&act=edituser&id=$r[id_kategori]'> Edit </a> | 
+					<a href='?module=kategori&act=editdata&id=$r[id_kategori]'> Edit </a> | 
 					<a href='$aksi?module=kategori&act=hapus&id=$r[id_kategori]'> Hapus </a>
 				</td>
 			</tr>";
@@ -65,7 +65,7 @@ $aksi="module/kategori/aksi_kategori.php";
 					</td>
 				</tr>
 				<tr>
-					<td>nm_kategori</td> <td><input class='form-control' type=nm_kategori name=nm_kategori value='$r[nm_kategori]'></td>
+					<td>Nama kategori</td> <td><input class='form-control' type=nm_kategori name=nm_kategori value='$r[nm_kategori]'></td>
 				</tr>
 				<tr>
 					<td></td> 
