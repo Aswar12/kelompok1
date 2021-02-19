@@ -10,21 +10,21 @@ else{
 	$module=$_GET[module];
 	$act=$_GET[act];
 
-	//hapus memanggil file admindel.php
-	if ($module=='admin' AND $act=='hapus'){
-		mysqli_query($konek,"delete from admin where username='$_GET[id]'");
+	//hapus memanggil file produkdel.php
+	if ($module=='produk' AND $act=='hapus'){
+		mysqli_query($konek,"delete from produk where username='$_GET[id]'");
 		header('location:../../home.php?module='.$module);
 	}
 
-	//input memanggil file adminsim.php
-	elseif ($module=='admin' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO admin values ('$_POST[username]','$_POST[password]','$_POST[nm_lengkap]')");
+	//input memanggil file produksim.php
+	elseif ($module=='produk' AND $act=='input') {
+		mysqli_query($konek,"INSERT INTO produk values ('$_POST[]','$_POST[password]','$_POST[nm_lengkap]')");
 		header('location:../../home.php?module='.$module);
 	}
 
-	//update memanggil file admineditsim.php
-	elseif ($module=='admin' AND $act=='update') {
-		mysqli_query($konek,"UPDATE admin set password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]'
+	//update memanggil file produkeditsim.php
+	elseif ($module=='produk' AND $act=='update') {
+		mysqli_query($konek,"UPDATE produk set password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]'
 		where username='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
