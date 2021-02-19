@@ -27,4 +27,5 @@ else{
 		mysqli_query($konek,"UPDATE berita SET id_produk='$_POST[id_produk]',id_kategori='$_POST[id_kategori]', nm_produk= '$_POST[nm_produk]',deskripsi='$_POST[deksripsi]',gambar='$_POST[gambar]',ukuran='$_POST[ukuran]',ukuran_sepatu='$_POST[ukuran_sepatu]',harga='$_POST[harga]',stok='$_POST[stok]',nm_kategori='$_POST[nm_kategori]' where id_produk= '$_POST[id]'");
 		header('location:../../home.php?module='.$module);
 	}
+}
 ?>

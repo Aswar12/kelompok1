@@ -114,7 +114,7 @@ $aksi="module/produk/aksi_produk.php";
 						<option value='null'>Silahkan Pilih Kategori</option>";
 						$data = mysqli_query($konek,"SELECT * FROM kategori");
 						while($r = mysqli_fetch_array($data)){
-						echo"<option value='$r[id_kategori]'> $r[id_kategori]</option>";
+						echo"<option value='$r[nm_kategori]'> $r[nm_kategori]</option>";
 						}
 					echo "</select>
 				</td>
