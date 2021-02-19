@@ -8,8 +8,8 @@
 	{
 		include "module/produk/produk.php";
 	}
-	elseif ($_GET['module']=='VVV') 
+	elseif ($_GET['module']=='kategori') 
 	{
-		
+		include "module/kategori/kategori.php";
 	}
 ?>
