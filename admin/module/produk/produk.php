@@ -20,7 +20,7 @@ $aksi="module/produk/aksi_produk.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[id_produk]</td> <td>$r[id_kategori]</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td>  <td>$r[stok]</td> <td>$r[nm_kategori]</td> 
+				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td> <td>$r[nm_kategori]</td>
 				<td> 
 					<a href='?module=produk&act=edituser&id=$r[id_produk]'> Edit </a> | 
 					<a href='$aksi?module=produk&act=hapus&id=$r[id_produk]'> Hapus </a>
@@ -40,7 +40,7 @@ $aksi="module/produk/aksi_produk.php";
 					<option value='null'>Silahkan Pilih Kategori</option>";
 					$data = mysqli_query($konek,"SELECT * FROM kategori");
 					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[id_kategori]'> $r[id_kategori]</option>";
+					echo"<option value='$r[nm_kategori]'> $r[nm_kategori]</option>";
 					}
 				echo "</select>
 			</td>
@@ -67,7 +67,7 @@ $aksi="module/produk/aksi_produk.php";
 				<tr>
 				<td>Ukuran Sepatu</td>
 					<td>
-						<input class='form-control' type=radio name=ukuran value=36 checked>36
+						<input type=radio name=ukuran value=36 checked>36
 						<input type=radio name=ukuran value=37 checked>37
 						<input type=radio name=ukuran value=38 checked>38
 						<input type=radio name=ukuran value=39 checked>39
