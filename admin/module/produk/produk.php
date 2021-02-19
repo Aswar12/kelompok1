@@ -22,7 +22,7 @@ $aksi="module/produk/aksi_produk.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td> <td>$r[nm_kategori]</td>
 				<td> 
-					<a href='?module=produk&act=edituser&id=$r[id_produk]'> Edit </a> | 
+					<a href='?module=produk&act=editdata&id=$r[id_produk]'> Edit </a> | 
 					<a href='$aksi?module=produk&act=hapus&id=$r[id_produk]'> Hapus </a>
 				</td>
 			</tr>";
