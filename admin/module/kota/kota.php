@@ -70,15 +70,15 @@ $aksi="module/kota/aksi_kota.php";
 				<tr>
 					<td>id_kota</td> 
 					<td>
-						<input type=text name=id_kota value='$r[id_kota]' disabled>
-						<input type=hidden name='idh' value='$r[id_kota]'>
+						<input class='form-control' type=text name=id_kota value='$r[id_kota]' disabled>
+						<input class='form-control' type=hidden name='idh' value='$r[id_kota]'>
 					</td>
 				</tr>
 				<tr>
 				<td>Nama provinsi</td> 
 				<td><select name=id_provinsi>
 						<option value='null'>Silahkan Pilih Provinsi</option>";
-						$data = mysqli_query($konek,"SELECT * FROM provinsi");
+						$data = mysqli_query($konek,'SELECT * FROM provinsi');
 						while($r = mysqli_fetch_array($data)){
 						echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
 						}
@@ -100,4 +100,3 @@ $aksi="module/kota/aksi_kota.php";
 	break;
 }
 ?>
-	  
