@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Feb 2021 pada 08.56
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.2.34
+-- Waktu pembuatan: 20 Feb 2021 pada 01.11
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -199,16 +200,15 @@ CREATE TABLE `produk` (
   `ukuran` enum('S','L','M','XL','XXL') NOT NULL DEFAULT 'S',
   `ukuran_sepatu` enum('36','37','38','39','40') NOT NULL DEFAULT '39',
   `harga` double(10,3) NOT NULL,
-  `stok` int(10) NOT NULL,
-  `nm_kategori` varchar(50) NOT NULL
+  `stok` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `ukuran_sepatu`, `harga`, `stok`, `nm_kategori`) VALUES
-(1, 1, 'YUDA Z Basic Sweater', 'nyaman dipakai bahannya halus dan murah', 'yuda.jpg', 'L', '39', 79.000, 10, 'Baju');
+INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `ukuran_sepatu`, `harga`, `stok`) VALUES
+(1, 1, 'YUDA Z Basic Sweater', 'nyaman dipakai bahannya halus dan murah', 'yuda.jpg', 'L', '39', 79.000, 10);
 
 -- --------------------------------------------------------
 
