@@ -12,7 +12,7 @@ else{
 
 	//hapus memanggil file kategoridel.php
 	if ($module=='kategori' AND $act=='hapus'){
-		mysqli_query($konek,"delete from kategori where username='$_GET[id]'");
+		mysqli_query($konek,"delete from kategori where id_kategori='$_GET[id]'");
 		header('location:../../home.php?module='.$module);
 	}
 

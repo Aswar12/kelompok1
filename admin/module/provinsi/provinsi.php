@@ -34,10 +34,6 @@ $aksi="module/provinsi/aksi_provinsi.php";
 	case "tambahdata":
 		echo"<form action='$aksi?module=provinsi&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
-		
-				<tr>
-					<td>id_provinsi</td> <td><input class='form-control' type=text name=id_provinsi></td>
-				</tr>
 				<tr>
 					<td>Nama provinsi</td> <td><input  class='form-control' type=text name=nm_provinsi></td>
 				</tr>
@@ -68,7 +64,7 @@ $aksi="module/provinsi/aksi_provinsi.php";
 					</td>
 				</tr>
 				<tr>
-					<td>Nama provinsi</td> <td><input class='form-control' type=text name=nm_provinsi value='$r[nm_lengkap]'></td>
+					<td>Nama provinsi</td> <td><input class='form-control' type=text name=nm_provinsi value='$r[nm_provinsi]'></td>
 				</tr>
 				<tr>
 					<td></td> 
