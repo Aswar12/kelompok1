@@ -10,7 +10,7 @@ $aksi="module/kategori/aksi_kategori.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>id kategori</th> <th>Nama kategori</th><th>Aksi</th>
+				<th>NO</th> <th>Nama kategori</th><th>Aksi</th>
 			
 			</tr></thead>";
 			$no=0;
@@ -20,7 +20,7 @@ $aksi="module/kategori/aksi_kategori.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[id_kategori]</td> <td>$r[id_kategori]</td> <td>$r[nm_kategori]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td>  <td>$r[stok]</td> <td>$r[nm_kategori]</td> 
+				<td>$no</td> <td>$r[nm_kategori]</td>
 				<td> 
 					<a href='?module=kategori&act=edituser&id=$r[id_kategori]'> Edit </a> | 
 					<a href='$aksi?module=kategori&act=hapus&id=$r[id_kategori]'> Hapus </a>
@@ -34,14 +34,9 @@ $aksi="module/kategori/aksi_kategori.php";
 	case "tambahdata":
 		echo"<form action='$aksi?module=kategori&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
+				
 				<tr>
-					<td>id_kategori</td> <td><input class='form-control' type=text name=id_kategori></td>
-				</tr>
-				<tr>
-					<td>id_kategori</td> <td><input class='form-control' type=text name=id_kategori></td>
-				</tr>
-				<tr>
-					<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nm_lengkap></td>
+					<td>nm_kategori</td> <td><input class='form-control' type=text name=nm_kategori></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -70,10 +65,7 @@ $aksi="module/kategori/aksi_kategori.php";
 					</td>
 				</tr>
 				<tr>
-					<td>id_kategori</td> <td><input class='form-control' type=id_kategori name=id_kategori value='$r[id_kategori]'></td>
-				</tr>
-				<tr>
-					<td>Nama Lengkap</td> <td><input class='form-control' type=text name=nm_lengkap value='$r[nm_lengkap]'></td>
+					<td>nm_kategori</td> <td><input class='form-control' type=nm_kategori name=nm_kategori value='$r[nm_kategori]'></td>
 				</tr>
 				<tr>
 					<td></td> 
