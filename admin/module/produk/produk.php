@@ -35,7 +35,7 @@ $aksi="module/produk/aksi_produk.php";
 		echo"<form action='$aksi?module=produk&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
-			<td>Id Kategori</td> 
+			<td>Nama Kategori</td> 
 			<td><select name=id_kategori>
 					<option value='null'>Silahkan Pilih Kategori</option>";
 					$data = mysqli_query($konek,"SELECT * FROM kategori");
@@ -80,9 +80,6 @@ $aksi="module/produk/aksi_produk.php";
 				<tr>
 				<td>Stok</td> <td><input class='form-control' type=text name=stok></td>
 				</tr>
-				<tr>
-				<td>Nama Kategori</td> <td><input class='form-control' type=text name=nm_kategori></td>
-				</tr>
 					<td></td>
 					<td>
 						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
@@ -109,7 +106,7 @@ $aksi="module/produk/aksi_produk.php";
 					</td>
 				</tr>
 				<tr>
-				<td>Id Kategori</td> 
+				<td>Nama Kategori</td> 
 				<td><select name=id_kategori>
 						<option value='null'>Silahkan Pilih Kategori</option>";
 						$data = mysqli_query($konek,"SELECT * FROM kategori");
@@ -153,9 +150,6 @@ $aksi="module/produk/aksi_produk.php";
 					</tr>			
 					<tr>
 					<td>Stok</td> <td><input class='form-control' type=text name=stok></td>
-					</tr>
-					<tr>
-					<td>Nama Kategori</td> <td><input class='form-control' type=text name=nm_kategori></td>
 					</tr>
 				<tr>
 					<td></td> 
