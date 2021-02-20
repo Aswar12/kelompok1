@@ -24,8 +24,8 @@ else{
 
 	//update memanggil file kategorieditsim.php
 	elseif ($module=='kategori' AND $act=='update') {
-		mysqli_query($konek,"UPDATE kategori set password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]'
-		where username='$_POST[idh]'");
+		mysqli_query($konek,"UPDATE kategori set nm_kategori='$_POST[nm_kategori]'
+		where id_kategori='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
  }
