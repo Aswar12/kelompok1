@@ -24,7 +24,7 @@ else{
 
 	//update memanggil file provinsieditsim.php
 	elseif ($module=='kota' AND $act=='update') {
-		mysqli_query($konek,"UPDATE kota set id_kota='$_POST[id_kota]',id_provinsi='$_POST[id_provinsi]',nm_kota='$_POST[nm_kota]'
+		mysqli_query($konek,"UPDATE kota set id_provinsi='$_POST[id_provinsi]',nm_kota='$_POST[nm_kota]'
 		where id_kota='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}

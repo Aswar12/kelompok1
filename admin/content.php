@@ -24,4 +24,8 @@
 	{
 		include "module/keranjang/keranjang.php";
 	}
+	elseif ($_GET['module']=='admin') 
+	{
+		include "module/admin/admin.php";
+	}
 ?>
