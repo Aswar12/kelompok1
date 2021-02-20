@@ -1,5 +1,5 @@
 <?php
-$aksi="module/provinsi/aksi_kategori.php";
+$aksi="module/provinsi/aksi_provinsi.php";
 
 	switch($_GET[act])
 	{
@@ -20,7 +20,7 @@ $aksi="module/provinsi/aksi_kategori.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[id_provinsi]</td> <td>$r[id_provinsi]</td> <td>$r[nm_kategori]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td>  <td>$r[stok]</td> <td>$r[nm_kategori]</td> 
+				<td>$no</td> <td>$r[id_provinsi]</td> <td>$r[id_provinsi]</td> <td>$r[nm_provinsi]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td>  <td>$r[stok]</td> <td>$r[nm_provinsi]</td> 
 				<td> 
 					<a href='?module=provinsi&act=edituser&id=$r[id_provinsi]'> Edit </a> | 
 					<a href='$aksi?module=provinsi&act=hapus&id=$r[id_provinsi]'> Hapus </a>
@@ -30,18 +30,16 @@ $aksi="module/provinsi/aksi_kategori.php";
 		echo"</table>";
 	break;
 
-	// Tambah Data - memanggil file kategorifm.php
+	// Tambah Data - memanggil file provinsifm.php
 	case "tambahdata":
 		echo"<form action='$aksi?module=provinsi&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
+		
 				<tr>
 					<td>id_provinsi</td> <td><input class='form-control' type=text name=id_provinsi></td>
 				</tr>
 				<tr>
-					<td>id_provinsi</td> <td><input class='form-control' type=text name=id_provinsi></td>
-				</tr>
-				<tr>
-					<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nm_lengkap></td>
+					<td>Nama provinsi</td> <td><input  class='form-control' type=text name=nm_provinsi></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -54,7 +52,7 @@ $aksi="module/provinsi/aksi_kategori.php";
 		</form>";	
 	break;
 		
-	// Edit Data - memanggil file kategorieditfm.php
+	// Edit Data - memanggil file provinsieditfm.php
 	case "editdata":
 		
 			$data = mysqli_query($konek,"SELECT * FROM provinsi where id_provinsi='$_GET[id]'");
@@ -70,10 +68,7 @@ $aksi="module/provinsi/aksi_kategori.php";
 					</td>
 				</tr>
 				<tr>
-					<td>id_provinsi</td> <td><input class='form-control' type=id_provinsi name=id_provinsi value='$r[id_provinsi]'></td>
-				</tr>
-				<tr>
-					<td>Nama Lengkap</td> <td><input class='form-control' type=text name=nm_lengkap value='$r[nm_lengkap]'></td>
+					<td>Nama provinsi</td> <td><input class='form-control' type=text name=nm_provinsi value='$r[nm_lengkap]'></td>
 				</tr>
 				<tr>
 					<td></td> 
