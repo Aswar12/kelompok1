@@ -16,4 +16,8 @@
 	{
 		include "module/provinsi/provinsi.php";
 	}
+	elseif ($_GET['module']=='kota') 
+	{
+		include "module/kota/kota.php";
+	}
 ?>

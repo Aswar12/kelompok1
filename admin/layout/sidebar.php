@@ -40,7 +40,7 @@
               <li class="nav-item">
                 <a href="?module=produk" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PRODUK</p>
+                  <p>Produk</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -53,6 +53,12 @@
                 <a href="?module=provinsi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Provinsi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="?module=kota" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kota</p>
                 </a>
               </li>
             </ul>
