@@ -10,7 +10,7 @@ $aksi="module/produk/aksi_produk.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama produk</th> <th>Deskripsi</th> <th>Gambar</th> <th>Ukuran</th> <th>Harga</th> <th>Stok</th> <th>Nama kategori</th> <th>Pilihan</th>
+				<th>NO</th> <th>Nama produk</th> <th>Deskripsi</th> <th>Gambar</th> <th>Ukuran</th> <th>Harga</th> <th>Stok</th> <th>Pilihan</th>
 			
 			</tr></thead>";
 			$no=0;
@@ -20,7 +20,7 @@ $aksi="module/produk/aksi_produk.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td> <td>$r[nm_kategori]</td>
+				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td>
 				<td> 
 					<a href='?module=produk&act=editdata&id=$r[id_produk]'> Edit </a> | 
 					<a href='$aksi?module=produk&act=hapus&id=$r[id_produk]'> Hapus </a>
@@ -55,24 +55,17 @@ $aksi="module/produk/aksi_produk.php";
 				<td>Gambar</td> <td><input class='form-control' type=file name=gambar></td>
 				</tr>
 				<tr>
-				<td>Ukuran Pakaian</td>
-					<td>
-						<input type=radio name=ukuran value=S checked>S
-						<input type=radio name=ukuran value=M checked>M
-						<input type=radio name=ukuran value=L checked>L
-						<input type=radio name=ukuran value=XL checked>XL
-						<input type=radio name=ukuran value=XXl checked>XXl
-					</td>
-				</tr>
-				<tr>
-				<td>Ukuran Sepatu</td>
-					<td>
-						<input type=radio name=ukuran value=36 checked>36
-						<input type=radio name=ukuran value=37 checked>37
-						<input type=radio name=ukuran value=38 checked>38
-						<input type=radio name=ukuran value=39 checked>39
-						<input type=radio name=ukuran value=40 checked>40
-					</td>
+				<td>Ukuran Pakaian & Sepatu</td>
+				<td>
+					<input type=radio name=ukuran value=S checked>S
+					<input type=radio name=ukuran value=M checked>M
+					<input type=radio name=ukuran value=L checked>L
+					<input type=radio name=ukuran value=XL checked>XL
+					<input type=radio name=ukuran value=XXl checked>XXl
+					<input type=radio name=ukuran value=39 checked>39
+					<input type=radio name=ukuran value=40 checked>40
+					<input type=radio name=ukuran value=41 checked>41
+				</td>
 				</tr>
 				<tr>
 				<td>Harga</td> <td><input class='form-control' type=text name=harga></td>
@@ -126,23 +119,16 @@ $aksi="module/produk/aksi_produk.php";
 					<td>Gambar</td> <td><input class='form-control' type=file name=gambar></td>
 					</tr>
 					<tr>
-					<td>Ukuran Pakaian</td>
+					<td>Ukuran Pakaian & Sepatu</td>
 						<td>
 							<input type=radio name=ukuran value=S checked>S
 							<input type=radio name=ukuran value=M checked>M
 							<input type=radio name=ukuran value=L checked>L
 							<input type=radio name=ukuran value=XL checked>XL
 							<input type=radio name=ukuran value=XXl checked>XXl
-						</td>
-					</tr>
-					<tr>
-					<td>Ukuran Sepatu</td>
-						<td>
-							<input type=radio name=ukuran value=36 checked>36
-							<input type=radio name=ukuran value=37 checked>37
-							<input type=radio name=ukuran value=38 checked>38
 							<input type=radio name=ukuran value=39 checked>39
 							<input type=radio name=ukuran value=40 checked>40
+							<input type=radio name=ukuran value=41 checked>41
 						</td>
 					</tr>
 					<tr>
