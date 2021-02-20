@@ -56,9 +56,17 @@ $aksi="module/keranjang/aksi_keranjang.php";
 				echo "</select>
 			</td>
 			</tr>
-				<tr>
-					<td>Harga</td> <td><input  class='form-control' type=text name=harga></td>
-				</tr>
+			<tr>
+			<td>Harga</td> 
+			<td><select name=id_produk>
+					<option value='null'>Silahkan Pilih Harga</option>";
+					$data = mysqli_query($konek,"SELECT * FROM produk");
+					while($r = mysqli_fetch_array($data)){
+					echo"<option value='$r[harga]'> $r[harga]</option>";
+					}
+				echo "</select>
+			</td>
+			</tr>
 				<tr>
 					<td>Jumlah</td> <td><input class='form-control' type=text name=jumlah></td>
 				</td>
@@ -112,15 +120,24 @@ $aksi="module/keranjang/aksi_keranjang.php";
 				echo "</select>
 			</td>
 			</tr>
-				<tr>
-					<td>Harga</td> <td><input  class='form-control' type=text name=harga></td>
-				</tr>
+			<tr>
+			<td>Harga</td> 
+			<td><select name=id_produk>
+					<option value='null'>Silahkan Pilih Harga</option>";
+					$data = mysqli_query($konek,"SELECT * FROM produk");
+					while($r = mysqli_fetch_array($data)){
+					echo"<option value='$r[harga]'> $r[harga]</option>";
+					}
+				echo "</select>
+			</td>
+			</tr>
 				<tr>
 					<td>Jumlah</td> <td><input class='form-control' type=text name=jumlah></td>
 				</td>
 				<tr>
 				<td>Tgl Keranjang</td> <td><input class='form-control' type=date name=tgl_keranjang></td>
 				</tr>
+					<td></td>
 					<td>
 						<input type=submit class='btn btn-default' name=simpan value='Update'>
 						<input type=reset class='btn btn-default' name=batal value='Batal'>

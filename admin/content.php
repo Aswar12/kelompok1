@@ -20,4 +20,8 @@
 	{
 		include "module/kota/kota.php";
 	}
+	elseif ($_GET['module']=='keranjang') 
+	{
+		include "module/keranjang/keranjang.php";
+	}
 ?>
