@@ -1,7 +1,7 @@
 <?php
 $aksi="module/kota/aksi_kota.php";
 
-	switch($_GET[act])
+	switch($_GET['act'])
 	{
 
 	default:
@@ -34,6 +34,17 @@ $aksi="module/kota/aksi_kota.php";
 	case "tambahdata":
 		echo"<form action='$aksi?module=kota&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
+			<tr>
+			<td>Nama provinsi</td> 
+			<td><select name=id_provinsi>
+					<option value='null'>Silahkan Pilih Provinsi </option>";
+					$data = mysqli_query($konek,"SELECT * FROM provinsi");
+					while($r = mysqli_fetch_array($data)){
+					echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
+					}
+				echo "</select>
+			</td>
+			</tr>
 				<tr>
 					<td>Nama kota</td> <td><input  class='form-control' type=text name=nm_kota></td>
 				</tr>
@@ -62,6 +73,17 @@ $aksi="module/kota/aksi_kota.php";
 						<input type=text name=id_kota value='$r[id_kota]' disabled>
 						<input type=hidden name='idh' value='$r[id_kota]'>
 					</td>
+				</tr>
+				<tr>
+				<td>Nama provinsi</td> 
+				<td><select name=id_provinsi>
+						<option value='null'>Silahkan Pilih Provinsi</option>";
+						$data = mysqli_query($konek,"SELECT * FROM provinsi");
+						while($r = mysqli_fetch_array($data)){
+						echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
+						}
+					echo "</select>
+				</td>
 				</tr>
 				<tr>
 					<td>Nama kota</td> <td><input class='form-control' type=text name=nm_kota value='$r[nm_kota]'></td>

@@ -24,7 +24,7 @@ else{
 
 	//update memanggil file kategorieditsim.php
 	elseif ($module=='produk' AND $act=='update') {
-		mysqli_query($konek,"UPDATE  set id_produk='$_POST[id_produk]',nm_kategori='$_POST[nm_kategori]',nm_produk='$_POST[nm_produk]',deskripsi='$_POST[deskripsi]',gambar='$_POST[gambar]',ukuran='$_POST[ukuran]',harga='$_POST[harga]',stok='$_POST[stok]'
+		mysqli_query($konek,"UPDATE  set id_produk='$_POST[id_produk]',id_kategori='$_POST[id_kategori]',nm_produk='$_POST[nm_produk]',deskripsi='$_POST[deskripsi]',gambar='$_POST[gambar]',ukuran='$_POST[ukuran]',harga='$_POST[harga]',stok='$_POST[stok]'
 		where id_produk='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
