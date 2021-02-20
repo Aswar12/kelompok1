@@ -50,7 +50,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="?module=kategori" class="nav-link">
+                <a href="?module=provinsi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Provinsi</p>
                 </a>

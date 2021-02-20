@@ -10,7 +10,7 @@ $aksi="module/provinsi/aksi_provinsi.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>id provinsi</th> <th>Nama provinsi</th><th>Aksi</th>
+				<th>NO</th> <th>Nama provinsi</th><th>Aksi</th>
 			
 			</tr></thead>";
 			$no=0;
@@ -20,9 +20,9 @@ $aksi="module/provinsi/aksi_provinsi.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[id_provinsi]</td> <td>$r[id_provinsi]</td> <td>$r[nm_provinsi]</td> <td>$r[deskripsi]</td> <td>$r[gambar]</td> <td>$r[ukuran]</td> <td>$r[harga]</td>  <td>$r[stok]</td> <td>$r[nm_provinsi]</td> 
+				<td>$no</td> <td>$r[nm_provinsi]</td> 
 				<td> 
-					<a href='?module=provinsi&act=edituser&id=$r[id_provinsi]'> Edit </a> | 
+					<a href='?module=provinsi&act=editdata&id=$r[id_provinsi]'> Edit </a> | 
 					<a href='$aksi?module=provinsi&act=hapus&id=$r[id_provinsi]'> Hapus </a>
 				</td>
 			</tr>";

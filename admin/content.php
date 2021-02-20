@@ -12,4 +12,8 @@
 	{
 		include "module/kategori/kategori.php";
 	}
+	elseif ($_GET['module']=='provinsi') 
+	{
+		include "module/provinsi/provinsi.php";
+	}
 ?>

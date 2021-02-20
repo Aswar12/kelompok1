@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Feb 2021 pada 22.52
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.2.28
+-- Waktu pembuatan: 20 Feb 2021 pada 08.29
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -86,9 +85,10 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nm_kategori`) VALUES
-(1, 'Baju'),
-(2, 'Celana'),
-(3, 'Sepatu');
+(0, 'Baju'),
+(1, 'Celana'),
+(2, 'Sepatu'),
+(3, 'Sandal');
 
 -- --------------------------------------------------------
 
@@ -217,7 +217,7 @@ INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gam
 --
 
 CREATE TABLE `provinsi` (
-  `id_provisi` int(10) NOT NULL,
+  `id_provinsi` int(10) NOT NULL,
   `nm_provinsi` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -225,7 +225,7 @@ CREATE TABLE `provinsi` (
 -- Dumping data untuk tabel `provinsi`
 --
 
-INSERT INTO `provinsi` (`id_provisi`, `nm_provinsi`) VALUES
+INSERT INTO `provinsi` (`id_provinsi`, `nm_provinsi`) VALUES
 (1, 'Sulawesi Selatan');
 
 --
@@ -291,7 +291,7 @@ ALTER TABLE `produk`
 -- Indeks untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
-  ADD PRIMARY KEY (`id_provisi`);
+  ADD PRIMARY KEY (`id_provinsi`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -307,7 +307,7 @@ ALTER TABLE `det_pembelian`
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`
@@ -349,7 +349,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
-  MODIFY `id_provisi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_provinsi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -379,7 +379,7 @@ ALTER TABLE `keranjang`
 -- Ketidakleluasaan untuk tabel `kota`
 --
 ALTER TABLE `kota`
-  ADD CONSTRAINT `kota_ibfk_1` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provisi`);
+  ADD CONSTRAINT `kota_ibfk_1` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provinsi`);
 
 --
 -- Ketidakleluasaan untuk tabel `penilaian`
