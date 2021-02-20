@@ -18,7 +18,7 @@ else{
 
 	//input memanggil file kategorisim.php
 	elseif ($module=='kategori' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO kategori values ('$_POST[username]','$_POST[password]','$_POST[nm_lengkap]')");
+		mysqli_query($konek,"INSERT INTO kategori values ('$_POST[id_kategori]','$_POST[nm_kategori]')");
 		header('location:../../home.php?module='.$module);
 	}
 
