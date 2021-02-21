@@ -28,4 +28,8 @@
 	{
 		include "module/admin/admin.php";
 	}
+	elseif ($_GET['module']=='kecamatan') 
+	{
+		include "module/kecamatan/kecamatan.php";
+	}
 ?>

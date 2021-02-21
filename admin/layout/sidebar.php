@@ -79,6 +79,12 @@
                   <p>Kota</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="?module=kecamatan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kecamatan</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
