@@ -10,17 +10,16 @@ $aksi="module/admin/aksi_admin.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Foto</th> <th>Username</th> <th>Password</th> <th>Nama Lengkap</th> <th>Email</th> <th>Alamat</th> <th>Aksi</th>
-			
+				<th>NO</th> <th>Username</th> <th>Password</th> <th>Nama Lengkap</th> <th>Email</th> <th>Alamat</th> <th>Foto</th> <th>Aksi</th>
 			</tr></thead>";
 			$no=0;
 			
-			$data = mysqli_query($konek,"SELECT * FROM admin");
+			$data = mysqli_query($konek,"SELECT * FROM admin");	
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[foto]</td> <td>$r[username]</td> <td>$r[password]</td> <td>$r[nm_lengkap]</td> <td>$r[email]</td> <td>$r[alamat]</td> 
+				<td>$no</td> <td>$r[username]</td> <td>$r[password]</td> <td>$r[nm_lengkap]</td> <td>$r[email]</td> <td>$r[alamat]</td> <td>$r[foto]</td>  
 				<td> 
 					<a href='?module=admin&act=edituser&id=$r[username]'> Edit </a> | 
 					<a href='$aksi?module=admin&act=hapus&id=$r[username]'> Hapus </a>
@@ -50,7 +49,7 @@ $aksi="module/admin/aksi_admin.php";
 					<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
 				</tr>
 				<tr>
-					<td>Foto</td> <td><input  class='form-control' type=text name=foto></td>
+					<td>Foto</td> <td><input  class='form-control' type=file name=foto></td>
 				</tr>
 				<tr>
 					<td></td>

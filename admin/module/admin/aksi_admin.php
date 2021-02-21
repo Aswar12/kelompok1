@@ -18,13 +18,13 @@ else{
 
 	//input memanggil file adminsim.php
 	elseif ($module=='admin' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO admin values ('$_POST[username]','$_POST[password]','$_POST[nm_lengkap]','$_POST[email]','$_POST[foto]','$_POST[alamat]')");
+		mysqli_query($konek,"INSERT INTO admin values ('$_POST[username]','$_POST[password]','$_POST[nm_lengkap]','$_POST[email]','$_POST[alamat]','$_POST[foto]')");
 		header('location:../../home.php?module='.$module);
 	}
 
 	//update memanggil file admineditsim.php
 	elseif ($module=='admin' AND $act=='update') {
-		mysqli_query($konek,"UPDATE admin set password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]','$_POST[email]','$_POST[foto]','$_POST[alamat]'
+		mysqli_query($konek,"UPDATE admin set  password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]',email='$_POST[email]',alamat='$_POST[alamat]'foto='$_POST[foto]',
 		where username='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
