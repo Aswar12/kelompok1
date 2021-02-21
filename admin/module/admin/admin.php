@@ -49,7 +49,8 @@ $aksi="module/admin/aksi_admin.php";
 					<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
 				</tr>
 				<tr>
-					<td>Foto</td> <td><input  class='form-control' type=file name=foto></td>
+					<td>Foto</td> <td> <input  class='btn btn-default' type=file name=foto> 
+				</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -78,20 +79,21 @@ $aksi="module/admin/aksi_admin.php";
 					</td>
 				</tr>
 				<tr>
-				<td>Nama Lengkap</td> <td><input class='form-control' type=text name=nm_lengkap value='$r[nm_lengkap]'></td>
-				</tr>
-				<tr>
-					<td>Password</td> <td><input class='form-control' type=password name=password value='$r[password]'></td>
-				</tr>
-				<tr>
-					<td>Email</td> <td><input  class='form-control' type=text value='$r[email]'></td>
-				</tr>
-				<tr>
-					<td>Alamat</td> <td><input  class='form-control' type=text value='$r[alamat]'></td>
-				</tr>
-				<tr>
-					<td>Foto</td> <td><input class='form-control' type=file value='$r[foto]'></td>
-				</tr>
+				<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nm_lengkap></td>
+			</tr>
+			<tr>
+				<td>Password</td> <td><input class='form-control' type=password name=password></td>
+			</tr>
+			<tr>
+				<td>Email</td> <td><input  class='form-control' type=text name=email></td>
+			</tr>
+			<tr>
+				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
+			</tr>
+			<tr>
+				<td>Foto</td> <td> <input  class='btn btn-default' type=file name=foto> 
+			</td>
+			</tr>
 				<tr>
 					<td></td> 
 					<td>

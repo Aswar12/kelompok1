@@ -24,7 +24,7 @@ else{
 
 	//update memanggil file admineditsim.php
 	elseif ($module=='admin' AND $act=='update') {
-		mysqli_query($konek,"UPDATE admin set  password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]',email='$_POST[email]',alamat='$_POST[alamat]'foto='$_POST[foto]',
+		mysqli_query($konek,"UPDATE admin set password='$_POST[password]',nm_lengkap='$_POST[nm_lengkap]',email='$_POST[email]',alamat='$_POST[alamat]',foto='$_POST[foto]'
 		where username='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
