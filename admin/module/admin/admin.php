@@ -19,7 +19,7 @@ $aksi="module/admin/aksi_admin.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[username]</td> <td>$r[password]</td> <td>$r[nm_lengkap]</td> <td>$r[email]</td> <td>$r[alamat]</td> <td>$r[foto]</td>  
+				<td>$no</td> <td>$r[username]</td> <td>$r[password]</td> <td>$r[nm_lengkap]</td> <td>$r[email]</td> <td>$r[alamat]</td> <td><img src=dist/img/admin/$r[foto] width= 80px></td>  
 				<td> 
 					<a href='?module=admin&act=edituser&id=$r[username]'> Edit </a> | 
 					<a href='$aksi?module=admin&act=hapus&id=$r[username]'> Hapus </a>
