@@ -15,7 +15,7 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 		</thead>";
 			$no=0;
 			
-			$data = mysqli_query($konek,'SELECT * FROM kecamatan t, kota k, provinsi p WHERE  t.id_kecamatan=k.id_provinsi');
+			$data = mysqli_query($konek,'SELECT * FROM kecamatan t, kota k, provinsi p WHERE  t.id_kecamatan=k.id_provinsi=p.id_provinsi');
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
@@ -34,17 +34,6 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 	case "tambahdata":
 		echo"<form action='$aksi?module=kecamatan&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
-			<tr>
-			<td>Nama provinsi</td> 
-			<td><select name=id_provinsi>
-					<option value='null'>Silahkan Pilih Provinsi </option>";
-					$data = mysqli_query($konek,"SELECT * FROM provinsi");
-					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
-					}
-				echo "</select>
-			</td>
-			</tr>
 			<tr>
 			<td>Nama Kota</td> 
 			<td><select name=id_kota>
@@ -89,17 +78,6 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 					</td>
 				</tr>
 				<tr>
-				<td>Nama provinsi</td> 
-				<td><select name=id_provinsi>
-						<option value='null'>Silahkan Pilih Provinsi</option>";
-						$data = mysqli_query($konek,'SELECT * FROM provinsi');
-						while($r = mysqli_fetch_array($data)){
-						echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
-						}
-					echo "</select>
-				</td>
-				</tr>
-				<tr>
 				<td>Nama Kota</td> 
 				<td><select name=id_kota>
 						<option value='null'>Silahkan Pilih kota </option>";
@@ -113,10 +91,9 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 				<tr>
 					<td>Nama kecamatan</td> <td><input class='form-control' type=text name=nm_kecamatan value='$r[nm_kecamatan]'></td>
 				</tr>
-						<tr>
-<td>Harga Ongkir</td> <td><input  class='form-control' type=text name=harga_ongkir></
-td>
-</tr>
+				<tr>
+					<td>Harga Ongkir</td> <td><input  class='form-control' type=text name=harga_ongkir></td>
+				</tr>
 				<tr>
 					<td></td> 
 					<td>
