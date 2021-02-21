@@ -10,17 +10,17 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama Provinsi</th><th>Nama kota</th><th>Nama kecamatan</th><th>Aksi</th>
+				<th>NO</th> <th>Nama Provinsi</th> <th>Nama kota</th> <th>Nama kecamatan</th> <th>Harga Ongkir</th> <th>Aksi</th>
 			</tr>
 		</thead>";
 			$no=0;
 			
-			$data = mysqli_query($konek,'SELECT * FROM kecamatan t, kota k WHERE  k.id_kota = t.id_kota');
+			$data = mysqli_query($konek,'SELECT * FROM kecamatan t, kota k, provinsi p WHERE  t.id_kecamatan=k.id_provinsi=p.id_provinsi');
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[nm_provinsi]</td> <td>$r[nm_kota]</td> <td>$r[nm_kecamatan]</td>
+				<td>$no</td> <td>$r[nm_provinsi]</td> <td>$r[nm_kota]</td> <td>$r[nm_kecamatan]</td> <td>$r[harga_ongkir]</td>
 				<td> 
 					<a href='?module=kecamatan&act=editdata&id=$r[id_kecamatan]'> Edit </a> | 
 					<a href='$aksi?module=kecamatan&act=hapus&id=$r[id_kecamatan]'> Hapus </a>
@@ -35,17 +35,6 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 		echo"<form action='$aksi?module=kecamatan&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
-			<td>Nama provinsi</td> 
-			<td><select name=id_provinsi>
-					<option value='null'>Silahkan Pilih Provinsi </option>";
-					$data = mysqli_query($konek,"SELECT * FROM provinsi");
-					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
-					}
-				echo "</select>
-			</td>
-			</tr>
-			<tr>
 			<td>Nama Kota</td> 
 			<td><select name=id_kota>
 					<option value='null'>Silahkan Pilih kota </option>";
@@ -58,6 +47,9 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 			</tr>
 				<tr>
 					<td>Nama kecamatan</td> <td><input  class='form-control' type=text name=nm_kecamatan></td>
+				</tr>
+				<tr>
+				<td>Harga Ongkir</td> <td><input  class='form-control' type=text name=harga_ongkir></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -86,17 +78,6 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 					</td>
 				</tr>
 				<tr>
-				<td>Nama provinsi</td> 
-				<td><select name=id_provinsi>
-						<option value='null'>Silahkan Pilih Provinsi</option>";
-						$data = mysqli_query($konek,'SELECT * FROM provinsi');
-						while($r = mysqli_fetch_array($data)){
-						echo"<option value='$r[id_provinsi]'> $r[nm_provinsi]</option>";
-						}
-					echo "</select>
-				</td>
-				</tr>
-				<tr>
 				<td>Nama Kota</td> 
 				<td><select name=id_kota>
 						<option value='null'>Silahkan Pilih kota </option>";
@@ -109,6 +90,9 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 				</tr>		
 				<tr>
 					<td>Nama kecamatan</td> <td><input class='form-control' type=text name=nm_kecamatan value='$r[nm_kecamatan]'></td>
+				</tr>
+				<tr>
+					<td>Harga Ongkir</td> <td><input  class='form-control' type=text name=harga_ongkir></td>
 				</tr>
 				<tr>
 					<td></td> 

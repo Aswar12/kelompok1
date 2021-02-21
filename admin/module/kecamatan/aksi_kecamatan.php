@@ -11,21 +11,21 @@ else{
 	$act=$_GET['act'];
 
 	//hapus memanggil file provinsidel.php
-	if ($module=='kota' AND $act=='hapus'){
-		mysqli_query($konek,"delete from kota where id_kota='$_GET[id]'");
+	if ($module=='kecamatan' AND $act=='hapus'){
+		mysqli_query($konek,"delete from kecamatan where id_kecamatan='$_GET[id]'");
 		header('location:../../home.php?module='.$module);
 	}
 
 	//input memanggil file provinsisim.php
-	elseif ($module=='kota' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO kota values ('$_POST[id_kota]','$_POST[id_provinsi]','$_POST[nm_kota]')");
+	elseif ($module=='kecamatan' AND $act=='input') {
+		mysqli_query($konek,"INSERT INTO kecamatan values ('$_POST[id_kecamatan]','$_POST[id_kota]','$_POST[nm_kecamatan]','$_POST[harga_ongkir]')");
 		header('location:../../home.php?module='.$module);
 	}
 
 	//update memanggil file provinsieditsim.php
-	elseif ($module=='kota' AND $act=='update') {
-		mysqli_query($konek,"UPDATE kota set id_provinsi='$_POST[id_provinsi]',nm_kota='$_POST[nm_kota]'
-		where id_kota='$_POST[idh]'");
+	elseif ($module=='kecamatan' AND $act=='update') {
+		mysqli_query($konek,"UPDATE kecamatan set id_kota='$_POST[id_kota]',nm_kecamatan='$_POST[nm_kecamatan]',harga_ongkir='$_POST[harga_ongkir]'	
+		where id_kecamatan='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
  }
