@@ -15,7 +15,7 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 		</thead>";
 			$no=0;
 			
-			$data = mysqli_query($konek,'SELECT * FROM kecamatan t, kota k, provinsi p WHERE  t.id_kecamatan=k.id_provinsi=p.id_provinsi');
+			$data = mysqli_query($konek,'SELECT * FROM kecamatan INNER JOIN kota ON kecamatan.id_kota = kota.id_kota INNER JOIN provinsi ON kota.id_provinsi = provinsi.id_provinsi');
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
