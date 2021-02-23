@@ -35,25 +35,10 @@ $aksi="module/keranjang/aksi_keranjang.php";
 		echo"<form action='$aksi?module=keranjang&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
-			<td>id produk</td> 
-			<td><select name=id_produk>
-					<option value='null'>Silahkan Pilih produk</option>";
-					$data = mysqli_query($konek,"SELECT * FROM produk");
-					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[id_produk]'> $r[id_produk]</option>";
-					}
-				echo "</select>
-			</td>
-			</tr>
-			<tr>
 			<td>Nama Produk</td> 
-			<td><select name=id_produk>
-					<option value='null'>Silahkan Pilih produk</option>";
-					$data = mysqli_query($konek,"SELECT * FROM produk");
+					$data = mysqli_query($konek,'SELECT * FROM produk');
 					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[nm_produk]'> $r[nm_produk]</option>";
-					}
-				echo "</select>
+				<input type=checkbox name=produk[]>
 			</td>
 			</tr>
 			<tr>
