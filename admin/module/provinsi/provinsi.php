@@ -6,7 +6,7 @@ $aksi="module/provinsi/aksi_provinsi.php";
 
 	default:
 		// Tampil Data - mengambil file provinsishow.php
-		echo"<a href='?module=provinsi&act=tambahdata'> Tambah </a>
+		echo"<a href='?module=provinsi&act=tambahdata' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
