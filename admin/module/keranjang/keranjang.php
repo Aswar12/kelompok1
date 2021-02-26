@@ -10,7 +10,7 @@ $aksi="module/keranjang/aksi_keranjang.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama keranjang</th> <th>Harga</th> <th>Jumlah</th> <th>Tgl_Keranjang</th> <th>Pilihan</th>
+				<th>NO</th> <th>Nama Produk</th> <th>Harga</th> <th>Jumlah</th> <th>Tgl_Keranjang</th> <th>Pilihan</th>
 			
 			</tr></thead>";
 			$no=0;
