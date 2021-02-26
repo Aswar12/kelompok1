@@ -32,3 +32,14 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="dist/js/datatables.min.js"></script>
+<script src="dist/js/jquery.dataTables.min.js"></script>
+<script>
+   $(document).ready(function() {
+    $('#aswar').DataTable( {
+		
+        "scrollY": 200,
+    
+    } );
+} );
+</script>
