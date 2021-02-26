@@ -36,7 +36,7 @@ $aksi="module/produk/aksi_produk.php";
 			<table class='table table-striped table-bordered'>
 			<tr>
 			<td>Nama Kategori</td> 
-			<td><select name=id_kategori>
+			<td><select name=id_kategori class='form-control'>
 					<option value='null'>Silahkan Pilih Kategori</option>";
 					$data = mysqli_query($konek,"SELECT * FROM kategori");
 					while($r = mysqli_fetch_array($data)){
@@ -100,7 +100,7 @@ $aksi="module/produk/aksi_produk.php";
 				</tr>
 				<tr>
 				<td>Nama Kategori</td> 
-				<td><select name=id_kategori>
+				<td><select name=id_kategori class='form-control'>
 						<option value='null'>Silahkan Pilih Kategori</option>";
 						$data = mysqli_query($konek,"SELECT * FROM kategori");
 						while($r = mysqli_fetch_array($data)){

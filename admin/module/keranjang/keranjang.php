@@ -43,7 +43,7 @@ $aksi="module/keranjang/aksi_keranjang.php";
 			</tr>
 			<tr>
 			<td>Harga</td> 
-			<td><select name=id_produk>
+			<td><select name=id_produk class='form-control' >
 					<option value='null'>Silahkan Pilih Harga</option>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){
@@ -85,7 +85,7 @@ $aksi="module/keranjang/aksi_keranjang.php";
 				</tr>
 				<tr>
 			<td>id produk</td> 
-			<td><select name=id_produk>
+			<td><select name=id_produk class='form-control'>
 					<option value='null'>Silahkan Pilih produk</option>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){
@@ -96,7 +96,7 @@ $aksi="module/keranjang/aksi_keranjang.php";
 			</tr>
 			<tr>
 			<td>Nama Produk</td> 
-			<td><select name=id_produk>
+			<td><select name=id_produk class='form-control'>
 					<option value='null'>Silahkan Pilih produk</option>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){
@@ -107,7 +107,7 @@ $aksi="module/keranjang/aksi_keranjang.php";
 			</tr>
 			<tr>
 			<td>Harga</td> 
-			<td><select name=id_produk>
+			<td><select name=id_produk class='form-control'>
 					<option value='null'>Silahkan Pilih Harga</option>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){

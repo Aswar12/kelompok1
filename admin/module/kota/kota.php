@@ -35,8 +35,8 @@ $aksi="module/kota/aksi_kota.php";
 		echo"<form action='$aksi?module=kota&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
-			<td>Nama provinsi</td> 
-			<td><select name=id_provinsi>
+			<td>Nama provinsi </td> 
+			<td><select name=id_provinsi class='form-control'>
 					<option value='null'>Silahkan Pilih Provinsi </option>";
 					$data = mysqli_query($konek,"SELECT * FROM provinsi");
 					while($r = mysqli_fetch_array($data)){
@@ -76,7 +76,7 @@ $aksi="module/kota/aksi_kota.php";
 				</tr>
 				<tr>
 				<td>Nama provinsi</td> 
-				<td><select name=id_provinsi>
+				<td><select name=id_provinsi class='form-control'>
 						<option value='null'>Silahkan Pilih Provinsi</option>";
 						$data = mysqli_query($konek,'SELECT * FROM provinsi');
 						while($r = mysqli_fetch_array($data)){
