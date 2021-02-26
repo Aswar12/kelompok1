@@ -22,8 +22,8 @@ $aksi="module/kategori/aksi_kategori.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_kategori]</td>
 				<td> 
-					<a href='?module=kategori&act=editdata&id=$r[id_kategori]'> Edit </a> | 
-					<a href='$aksi?module=kategori&act=hapus&id=$r[id_kategori]'> Hapus </a>
+					<a href='?module=kategori&act=editdata&id=$r[id_kategori]'> <img src='edit.png' width=20px> </a> | 
+					<a href='$aksi?module=kategori&act=hapus&id=$r[id_kategori]'> <img src='hapus.png' width=20px> </a>
 				</td>
 			</tr>";
 			}

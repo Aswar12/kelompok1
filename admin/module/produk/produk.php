@@ -22,8 +22,8 @@ $aksi="module/produk/aksi_produk.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td> <img src=module/produk/img/$r[gambar] width=120px  ></td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td>
 				<td> 
-					<a href='?module=produk&act=editdata&id=$r[id_produk]'> Edit </a> | 
-					<a href='$aksi?module=produk&act=hapus&id=$r[id_produk]'> Hapus </a>
+					<a href='?module=produk&act=editdata&id=$r[id_produk]'> <img src='edit.png' width=20px> </a> | 
+					<a href='$aksi?module=produk&act=hapus&id=$r[id_produk]'> <img src='hapus.png' width=20px> </a>
 				</td>
 			</tr>";
 			}

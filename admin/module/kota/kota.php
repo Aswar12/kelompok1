@@ -22,8 +22,8 @@ $aksi="module/kota/aksi_kota.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_provinsi]</td> <td>$r[nm_kota]</td>
 				<td> 
-					<a href='?module=kota&act=editdata&id=$r[id_kota]'> Edit </a> | 
-					<a href='$aksi?module=kota&act=hapus&id=$r[id_kota]'> Hapus </a>
+					<a href='?module=kota&act=editdata&id=$r[id_kota]'> <img src='edit.png' width=20px> </a> | 
+					<a href='$aksi?module=kota&act=hapus&id=$r[id_kota]'> <img src='hapus.png' width=20px> </a>
 				</td>
 			</tr>";
 			}

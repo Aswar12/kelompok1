@@ -22,8 +22,8 @@ $aksi="module/provinsi/aksi_provinsi.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_provinsi]</td> 
 				<td> 
-					<a href='?module=provinsi&act=editdata&id=$r[id_provinsi]'> Edit </a> | 
-					<a href='$aksi?module=provinsi&act=hapus&id=$r[id_provinsi]'> Hapus </a>
+					<a href='?module=provinsi&act=editdata&id=$r[id_provinsi]'> <img src='edit.png' width=20px> </a> | 
+					<a href='$aksi?module=provinsi&act=hapus&id=$r[id_provinsi]'> <img src='hapus.png' width=20px> </a>
 				</td>
 			</tr>";
 			}

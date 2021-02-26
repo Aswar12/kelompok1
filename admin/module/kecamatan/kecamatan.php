@@ -22,8 +22,8 @@ $aksi="module/kecamatan/aksi_kecamatan.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_provinsi]</td> <td>$r[nm_kota]</td> <td>$r[nm_kecamatan]</td> <td>$r[harga_ongkir]</td>
 				<td> 
-					<a href='?module=kecamatan&act=editdata&id=$r[id_kecamatan]'> Edit </a> | 
-					<a href='$aksi?module=kecamatan&act=hapus&id=$r[id_kecamatan]'> Hapus </a>
+					<a href='?module=kecamatan&act=editdata&id=$r[id_kecamatan]'> <img src='edit.png' width=20px> </a> | 
+					<a href='$aksi?module=kecamatan&act=hapus&id=$r[id_kecamatan]'> <img src='hapus.png' width=20px> </a>
 				</td>
 			</tr>";
 			}

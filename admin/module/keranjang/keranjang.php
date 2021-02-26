@@ -22,8 +22,8 @@ $aksi="module/keranjang/aksi_keranjang.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[harga]</td> <td>$r[jumlah]</td> <td>$r[tgl_keranjang]</td>
 				<td> 
-					<a href='?module=keranjang&act=editdata&id=$r[id_keranjang]'> Edit </a> | 
-					<a href='$aksi?module=keranjang&act=hapus&id=$r[id_keranjang]'> Hapus </a>
+					<a href='?module=keranjang&act=editdata&id=$r[id_keranjang]'> <img src='edit.png' width=20px> </a> | 
+					<a href='$aksi?module=keranjang&act=hapus&id=$r[id_keranjang]'> <img src='hapus.png' width=20px </a>
 				</td>
 			</tr>";
 			}
