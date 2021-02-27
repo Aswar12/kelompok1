@@ -36,7 +36,7 @@ $aksi="module/kategori/aksi_kategori.php";
 			<table class='table table-striped table-bordered'>
 				
 				<tr>
-					<td>nm_kategori</td> <td><input class='form-control' type=text name=nm_kategori></td>
+					<td>Nama Kategori</td> <td><input class='form-control' type=text name=nm_kategori></td>
 				</tr>
 				<tr>
 					<td></td>
