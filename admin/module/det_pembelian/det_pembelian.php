@@ -44,17 +44,6 @@ $aksi="module/det_pembelian/aksi_det_pembelian.php";
 			</td>
 			</tr>
 			<tr>
-			<td>Nama Produk</td> 
-			<td><select name=id_keranjang class='form-control'>
-					<option value='null'>Silahkan Pilih Produk</option>";
-					$data = mysqli_query($konek,"SELECT * FROM keranjang");
-					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[id_keranjang]'> $r[nm_produk]</option>";
-					}
-				echo "</select>
-			</td>
-			</tr>
-			<tr>
 			<td> Nama Pembeli</td> 
 			<td><select name=id_pembeli class='form-control'>
 					<option value='null'>Silahkan Pilih Pembeli</option>";
@@ -121,17 +110,6 @@ $aksi="module/det_pembelian/aksi_det_pembelian.php";
 						$data = mysqli_query($konek,"SELECT * FROM keranjang");
 						while($r = mysqli_fetch_array($data)){
 						echo"<option value='$r[id_keranjang]'> $r[id_keranjang]</option>";
-						}
-					echo "</select>
-				</td>
-				</tr>
-				<tr>
-				<td>Nama Produk</td> 
-				<td><select name=id_keranjang class='form-control'>
-						<option value='null'>Silahkan Pilih Produk</option>";
-						$data = mysqli_query($konek,"SELECT * FROM keranjang");
-						while($r = mysqli_fetch_array($data)){
-						echo"<option value='$r[id_keranjang]'> $r[nm_produk]</option>";
 						}
 					echo "</select>
 				</td>

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (empty($_SESSION['username']) AND empty ($_SESSION['passuser'])) {
@@ -18,13 +19,13 @@ else{
 
 	//input memanggil file kategorisim.php
 	elseif ($module=='det_pembelian' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO det_pembelian values ('$_POST[id_detpembelian]','$_POST[id_keranjang]','$_POST[nm_produk]','$_POST[nm_pembeli]','$_POST[nm_kecamatan]','$_POST[alamat]','$_POST[status]','$_POST[tgl_pembelian]')");
-		header('location:../../home.php?module='.$module);
+		mysqli_query($konek,"INSERT INTO det_pembelian values ('$_POST[id_detpembelian]','$_POST[id_keranjang]','$_POST[id_pembeli]','$_POST[id_kecamatan]','$_POST[alamat]','$_POST[status]','$_POST[tgl_pembelian]')");
+		header('location:../../home.php?module='.$module);	
 	}
 
 	//update memanggil file kategorieditsim.php
 	elseif ($module=='det_pembelian' AND $act=='update') {
-		mysqli_query($konek,"UPDATE  set nm_produk='$_POST[nm_produk]',nm_pembeli='$_POST[nm_pembeli]',nm_kecamatan='$_POST[nm_kecamatan]',alamat='$_POST[alamat]',status='$_POST[status]',tgl_pembelian='$_POST[tgl_pembelian]'
+		mysqli_query($konek,"UPDATE  set id_keranjang='$_POST[id_keranjang]',id_keranjang='$_POST[id_keranjang]',id_pembeli='$_POST[id_pembeli]',id_kecamatan='$_POST[id_kecamatan]',alamat='$_POST[alamat]',status='$_POST[status]',tgl_pembelian='$_POST[tgl_pembelian]'
 		where id_detpembelian='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
