@@ -55,6 +55,12 @@
                   <p>keranjang</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="?module=det_pembelian" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Detail Pembelian</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
