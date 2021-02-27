@@ -10,16 +10,16 @@ $aksi="module/det_pembelian/aksi_det_pembelian.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama Produk</th> <th>Nama Pembeli</th> <th>Kecamatan</th> <th>Alamat</th> <th>Status</th> <th>Tgl Pembelian</th> <th>Pilihan</th>
+				<th>NO</th> <th>ID Keranjang</th> <th>Nama Pembeli</th> <th>Nama Produk</th> <th>Kecamatan</th> <th>Alamat</th> <th>Status</th> <th>Tgl Pembelian</th> <th>Pilihan</th>
 			</tr></thead>";
 			$no=0;
 			
-			$data = mysqli_query($konek,"SELECT * FROM det_pembelian");
+			$data = mysqli_query($konek,"SELECT * FROM det_pembelian inner join keranjang on det_pembelian.id_keranjang = keranjang.id_keranjang inner join pembeli on pembeli.id_pembeli ");
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[id_produk]</td> <td>$r[id_pembeli]</td> <td>$r[id_kecamatan]</td> <td>$r[alamat]</td> <td>$r[status]</td> <td>$r[tgl_pembelian]</td>
+				<td>$no</td> <td>$r[id_keranjang]</td> <td>$r[nm_pembeli]</td> <td>$r[nm_produk]</td> <td>$r[nm_kecamatan]</td> <td>$r[alamat]</td> <td>$r[status]</td> <td>$r[tgl_pembelian]</td>
 				<td> 
 					<a href='?module=det_pembelian&act=editdata&id=$r[id_det_pembelian]'> Edit </a> | 
 					<a href='$aksi?module=det_pembelian&act=hapus&id=$r[id_det_pembelian]'> Hapus </a>
@@ -31,7 +31,7 @@ $aksi="module/det_pembelian/aksi_det_pembelian.php";
 
 	// Tambah Data - memanggil file detpembelianfm.php
 	case "tambahdata":
-		echo"<form action='$aksi?module=detpembelian&act=input' method='POST'>
+		echo"<form action='$aksi?module=det_pembelian&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
 			<td>Nama Produk</td> 
