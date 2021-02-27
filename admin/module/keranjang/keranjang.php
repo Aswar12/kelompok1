@@ -32,16 +32,16 @@ $aksi="module/keranjang/aksi_keranjang.php";
 
 	// Tambah Data - memanggil file keranjangfm.php
 	case "tambahdata":
+		$data = mysqli_query($konek,"SELECT * FROM keranjang");
+		$r = mysqli_fetch_array($data);
 		echo"<form action='$aksi?module=keranjang&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
 			<td>Nama Produk</td> 
 			<td><select name=id_produk class='form-control' >
 					<option value='null'>Silahkan Pilih Produk</option>";
-					$data = mysqli_query($konek,"SELECT * FROM produk");
-					while($r = mysqli_fetch_array($data)){
 					echo"<option value='$r[id_produk]'> $r[nm_produk]</option>";
-					}
+					
 				echo "</select>
 			</tr>
 			<tr>
@@ -49,12 +49,12 @@ $aksi="module/keranjang/aksi_keranjang.php";
 			<td>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){
-					echo"<input class='form-control' type=text name=harga value=' $r[harga]'></td>";
+					echo"<input class='form-control'type=text name=harga value='$r[harga]'</option>";
 					}
-				echo "
+				echo "</select>
 			</tr>		
 				<tr>
-					<td>Jumlah</td> <td><input class='form-control' type=text name=jumlah ></td>
+					<td>Jumlah</td> <td><input class='form-control' type=text name=jumlah></td>
 				</td>
 				<tr>
 				<td>Tgl Keranjang</td> <td><input class='form-control' type=date name=tgl_keranjang></td>
