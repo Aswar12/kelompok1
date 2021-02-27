@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (empty($_SESSION['username']) AND empty ($_SESSION['passuser'])) {
+if (empty($_SESSION['username']) AND empty ($_SESSION['password'])) {
 	header("location:../../index.php");
 }
 
