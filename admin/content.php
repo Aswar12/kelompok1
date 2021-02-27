@@ -32,4 +32,8 @@
 	{
 		include "module/kecamatan/kecamatan.php";
 	}
+	elseif ($_GET['module']=='det_pembelian') 
+	{
+		include "module/det_pembelian/det_pembelian.php";
+	}
 ?>
