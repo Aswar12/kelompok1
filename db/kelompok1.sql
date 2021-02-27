@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Feb 2021 pada 01.11
+-- Waktu pembuatan: 27 Feb 2021 pada 17.26
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.28
 
@@ -45,6 +45,10 @@ INSERT INTO `admin` (`username`, `password`, `nm_lengkap`, `email`, `alamat`, `f
 ('Aswar12', 'aswar12', 'Aswar Sumarlin', 'aswarsumarlin@gmail.com', 'jl. segeri', 'aswar.jpg'),
 ('firman', 'firman', 'firmansyah', 'firmansyah@gmail.com', 'jl. Paccerakkang', 'firman.jpg'),
 ('rany', 'rany', 'rany m pettasolong', 'rany@gmail.com', 'jl. Paccerakkang', 'rany.jpg'),
+('fitri', 'fitri', 'fitri amelia mansyur', 'fitri@gmail.com', 'jl. Paccerakkang', 'fitri.jpg'),
+('Aswar12', 'aswar12', 'Aswar Sumarlin', 'aswarsumarlin@gmail.com', 'jl. segeri', 'aswar.jpg'),
+('firman', 'firman', 'firmansyah', 'firmansyah@gmail.com', 'jl. Paccerakkang', 'firman.jpg'),
+('rany', 'rany', 'rany m pettasolong', 'rany@gmail.com', 'jl. Paccerakkang', 'rany.jpg'),
 ('fitri', 'fitri', 'fitri amelia mansyur', 'fitri@gmail.com', 'jl. Paccerakkang', 'fitri.jpg');
 
 -- --------------------------------------------------------
@@ -68,7 +72,7 @@ CREATE TABLE `det_pembelian` (
 --
 
 INSERT INTO `det_pembelian` (`id_detpembelian`, `id_keranjang`, `id_pembeli`, `id_kecamatan`, `alamat`, `status`, `tgl_pembelian`) VALUES
-(1, 1, 1, 1, 'jl. paccerakkang', 'baru', '2021-02-20');
+(5, 1, 1, 1, 'jl. paccerakkang', 'baru', '2021-02-17');
 
 -- --------------------------------------------------------
 
@@ -109,7 +113,9 @@ CREATE TABLE `kecamatan` (
 --
 
 INSERT INTO `kecamatan` (`id_kecamatan`, `id_kota`, `nm_kecamatan`, `harga_ongkir`) VALUES
-(1, 1, 'Biring Kanaya', 20.000);
+(1, 1, 'Biring Kanaya', 20.000),
+(8, 1, 'tamalanrea', 30.000),
+(12, 1, 'Mamajang', 40.000);
 
 -- --------------------------------------------------------
 
@@ -197,8 +203,7 @@ CREATE TABLE `produk` (
   `nm_produk` varchar(50) NOT NULL,
   `deskripsi` varchar(50) NOT NULL,
   `gambar` varchar(20) NOT NULL,
-  `ukuran` enum('S','L','M','XL','XXL') NOT NULL DEFAULT 'S',
-  `ukuran_sepatu` enum('36','37','38','39','40') NOT NULL DEFAULT '39',
+  `ukuran` enum('S','L','M','XL','XXL','39','40','41') NOT NULL DEFAULT 'S',
   `harga` double(10,3) NOT NULL,
   `stok` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -207,8 +212,8 @@ CREATE TABLE `produk` (
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `ukuran_sepatu`, `harga`, `stok`) VALUES
-(1, 1, 'YUDA Z Basic Sweater', 'nyaman dipakai bahannya halus dan murah', 'yuda.jpg', 'L', '39', 79.000, 10);
+INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `harga`, `stok`) VALUES
+(1, 1, 'YUDA Z Basic Sweater', 'nyaman dipakai bahannya halus dan murah', 'yuda.jpg', 'L', 79.000, 10);
 
 -- --------------------------------------------------------
 
@@ -301,7 +306,7 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT untuk tabel `det_pembelian`
 --
 ALTER TABLE `det_pembelian`
-  MODIFY `id_detpembelian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_detpembelian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
@@ -313,7 +318,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
-  MODIFY `id_kecamatan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kecamatan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `keranjang`
