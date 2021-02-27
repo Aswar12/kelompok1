@@ -36,22 +36,24 @@ $aksi="module/keranjang/aksi_keranjang.php";
 			<table class='table table-striped table-bordered'>
 			<tr>
 			<td>Nama Produk</td> 
-					$data = mysqli_query($konek,'SELECT * FROM produk');
-					while($r = mysqli_fetch_array($data)){
-				<input type=checkbox name=produk[]>
-			</td>
-			</tr>
-			<tr>
-			<td>Harga</td> 
 			<td><select name=id_produk class='form-control' >
-					<option value='null'>Silahkan Pilih Harga</option>";
+					<option value='null'>Silahkan Pilih Produk</option>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[harga]'> $r[harga]</option>";
+					echo"<option value='$r[id_produk]'> $r[nm_produk]</option>";
 					}
 				echo "</select>
-			</td>
 			</tr>
+			<tr>
+			<td>Nama Produk</td> 
+			<td><select name=id_produk class='form-control' >
+					<option value='null'>Silahkan Pilih Produk</option>";
+					$data = mysqli_query($konek,"SELECT * FROM produk");
+					while($r = mysqli_fetch_array($data)){
+					echo"<option value='$r[id_produk]'> $r[nm_produk]</option>";
+					}
+				echo "</select>
+			</tr>		
 				<tr>
 					<td>Jumlah</td> <td><input class='form-control' type=text name=jumlah></td>
 				</td>
