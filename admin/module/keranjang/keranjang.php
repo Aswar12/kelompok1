@@ -32,17 +32,18 @@ $aksi="module/keranjang/aksi_keranjang.php";
 
 	// Tambah Data - memanggil file keranjangfm.php
 	case "tambahdata":
-		$data = mysqli_query($konek,"SELECT * FROM keranjang");
-		$r = mysqli_fetch_array($data);
 		echo"<form action='$aksi?module=keranjang&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
 			<td>Nama Produk</td> 
-			<td><select name=id_produk class='form-control' >
+			<td><select name=id_kategori class='form-control'>
 					<option value='null'>Silahkan Pilih Produk</option>";
+					$data = mysqli_query($konek,"SELECT * FROM produk");
+					while($r = mysqli_fetch_array($data)){
 					echo"<option value='$r[id_produk]'> $r[nm_produk]</option>";
-					
+					}
 				echo "</select>
+			</td>
 			</tr>
 			<tr>
 			<td>Harga Produk</td> 

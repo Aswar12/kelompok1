@@ -32,11 +32,11 @@ $aksi="module/produk/aksi_produk.php";
 
 	// Tambah Data - memanggil file produkfm.php
 	case "tambahdata":
-		echo"<form action='$aksi?module=produk&act=input' method='POST'>
+		echo"<form action='$aksi?module=produk&act=input'method='POST'>
 			<table class='table table-striped table-bordered'>
 			<tr>
 			<td>Nama Kategori</td> 
-			<td><select name=id_kategori class='form-control'>
+			<td><select name='nm_kategori' class='form-control'>
 					<option value='null'>Silahkan Pilih Kategori</option>";
 					$data = mysqli_query($konek,"SELECT * FROM kategori");
 					while($r = mysqli_fetch_array($data)){
