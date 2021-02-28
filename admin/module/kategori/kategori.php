@@ -1,7 +1,7 @@
 <?php
 $aksi="module/kategori/aksi_kategori.php";
 
-	switch($_GET[act])
+	switch($_GET['act'])
 	{
 
 	default:
