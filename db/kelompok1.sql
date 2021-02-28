@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Feb 2021 pada 17.26
+-- Waktu pembuatan: 28 Feb 2021 pada 03.15
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.28
 
@@ -67,13 +67,6 @@ CREATE TABLE `det_pembelian` (
   `tgl_pembelian` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `det_pembelian`
---
-
-INSERT INTO `det_pembelian` (`id_detpembelian`, `id_keranjang`, `id_pembeli`, `id_kecamatan`, `alamat`, `status`, `tgl_pembelian`) VALUES
-(5, 1, 1, 1, 'jl. paccerakkang', 'baru', '2021-02-17');
-
 -- --------------------------------------------------------
 
 --
@@ -90,10 +83,7 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nm_kategori`) VALUES
-(0, 'Baju'),
-(1, 'Celana'),
-(2, 'Sepatu'),
-(3, 'Sandal');
+(1, 'baju');
 
 -- --------------------------------------------------------
 
@@ -127,7 +117,7 @@ CREATE TABLE `keranjang` (
   `id_keranjang` int(10) NOT NULL,
   `id_produk` int(10) NOT NULL,
   `nm_produk` varchar(50) NOT NULL,
-  `harga` int(10) NOT NULL,
+  `harga` double(10,3) NOT NULL,
   `jumlah` int(10) NOT NULL,
   `tgl_keranjang` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -137,7 +127,7 @@ CREATE TABLE `keranjang` (
 --
 
 INSERT INTO `keranjang` (`id_keranjang`, `id_produk`, `nm_produk`, `harga`, `jumlah`, `tgl_keranjang`) VALUES
-(1, 1, 'YUDA Z Basic Sweater', 79, 1, '2021-02-20');
+(1, 1, 'baju', 10.000, 2, '2021-02-10');
 
 -- --------------------------------------------------------
 
@@ -207,13 +197,6 @@ CREATE TABLE `produk` (
   `harga` double(10,3) NOT NULL,
   `stok` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `produk`
---
-
-INSERT INTO `produk` (`id_produk`, `id_kategori`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `harga`, `stok`) VALUES
-(1, 1, 'YUDA Z Basic Sweater', 'nyaman dipakai bahannya halus dan murah', 'yuda.jpg', 'L', 79.000, 10);
 
 -- --------------------------------------------------------
 
@@ -290,7 +273,8 @@ ALTER TABLE `penilaian`
 -- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`);
+  ADD PRIMARY KEY (`id_produk`),
+  ADD KEY `id_kategori` (`id_kategori`);
 
 --
 -- Indeks untuk tabel `provinsi`
@@ -306,13 +290,13 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT untuk tabel `det_pembelian`
 --
 ALTER TABLE `det_pembelian`
-  MODIFY `id_detpembelian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_detpembelian` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`
@@ -348,7 +332,7 @@ ALTER TABLE `penilaian`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
@@ -391,6 +375,12 @@ ALTER TABLE `kota`
 --
 ALTER TABLE `penilaian`
   ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`id_pembeli`) REFERENCES `pembeli` (`id_pembeli`);
+
+--
+-- Ketidakleluasaan untuk tabel `produk`
+--
+ALTER TABLE `produk`
+  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `kategori` (`id_kategori`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
