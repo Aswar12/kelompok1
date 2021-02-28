@@ -10,17 +10,17 @@ $aksi="module/produk/aksi_produk.php";
 		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Kategori</th><th>Nama produk</th> <th>Deskripsi</th> <th>Gambar</th> <th>Ukuran</th> <th>Harga</th> <th>Stok</th> <th>Pilihan</th>
+				<th>NO</th> <th>Nama produk</th> <th>Deskripsi</th> <th>Gambar</th> <th>Ukuran</th> <th>Harga</th> <th>Stok</th> <th>Pilihan</th>
 			
 			</tr></thead>";
 			$no=0;
 			
-			$data = mysqli_query($konek,"SELECT * FROM produk inner join kategori on produk.id_kategori=kategori.id_kategori");
+			$data = mysqli_query($konek,"SELECT * FROM produk ");
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td>  <td>$r[nm_kategori]</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td> <img src=module/produk/img/$r[gambar] width=110px></td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td>
+				<td>$no</td> <td>$r[nm_produk]</td> <td>$r[deskripsi]</td> <td> <img src=module/produk/img/$r[gambar] width=110px></td> <td>$r[ukuran]</td> <td>$r[harga]</td> <td>$r[stok]</td>
 				<td> 
 					<a href='?module=produk&act=editdata&id=$r[id_produk]'> <img src='edit.png' width=20px> </a> | 
 					<a href='$aksi?module=produk&act=hapus&id=$r[id_produk]'> <img src='hapus.png' width=20px> </a>
@@ -34,17 +34,6 @@ $aksi="module/produk/aksi_produk.php";
 	case "tambahdata":
 		echo"<form action='$aksi?module=produk&act=input'method='POST'>
 			<table class='table table-striped table-bordered'>
-			<tr>
-			<td>Nama Kategori</td> 
-			<td><select name='nm_kategori' class='form-control'>
-					<option value='null'>Silahkan Pilih Kategori</option>";
-					$data = mysqli_query($konek,"SELECT * FROM kategori");
-					while($r = mysqli_fetch_array($data)){
-					echo"<option value='$r[id_kategori]'> $r[nm_kategori]</option>";
-					}
-				echo "</select>
-			</td>
-			</tr>
 				<tr>
 					<td>Nama Produk</td> <td><input  class='form-control' type=text name=nm_produk></td>
 				</tr>
@@ -97,17 +86,6 @@ $aksi="module/produk/aksi_produk.php";
 						<input class='form-control' type=text name=id_produk value='$r[id_produk]' disabled>
 						<input class='form-control' type=hidden name='idh' value='$r[id_produk]'>
 					</td>
-				</tr>
-				<tr>
-				<td>Nama Kategori</td> 
-				<td><select name=id_kategori class='form-control'>
-						<option value='null'>Silahkan Pilih Kategori</option>";
-						$data = mysqli_query($konek,"SELECT * FROM kategori");
-						while($r = mysqli_fetch_array($data)){
-						echo"<option value='$r[id_kategori]'> $r[nm_kategori]</option>";
-						}
-					echo "</select>
-				</td>
 				</tr>
 					<tr>
 						<td>Nama Produk</td> <td><input  class='form-control' type=text name=nm_produk></td>
