@@ -46,14 +46,16 @@ $aksi="module/keranjang/aksi_keranjang.php";
 			</td>
 			</tr>
 			<tr>
-			<td>Harga Produk</td> 
-			<td>";
+			<td>Pilih Harga</td> 
+			<td><select name=id_kategori class='form-control'>
+					<option value='null'>Silahkan Pilih Harga</option>";
 					$data = mysqli_query($konek,"SELECT * FROM produk");
 					while($r = mysqli_fetch_array($data)){
-					echo"<input class='form-control'type=text name=harga value='$r[harga]'</option>";
+					echo"<option value='$r[id_produk]'> $r[harga]</option>";
 					}
 				echo "</select>
-			</tr>		
+			</td>
+			</tr>
 				<tr>
 					<td>Jumlah</td> <td><input class='form-control' type=text name=jumlah></td>
 				</td>
