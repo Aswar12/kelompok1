@@ -7,7 +7,7 @@ $aksi="module/produk/aksi_produk.php";
 	default:
 		// Tampil Data - mengambil file produkshow.php
 		echo"<a href='?module=produk&act=tambahdata' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
-		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
+		 <table id='kelompok1' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama produk</th> <th>Deskripsi</th> <th>Gambar</th> <th>Ukuran</th> <th>Harga</th> <th>Stok</th> <th>Pilihan</th>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Feb 2021 pada 03.15
+-- Waktu pembuatan: 28 Feb 2021 pada 13.00
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.28
 
@@ -42,14 +42,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username`, `password`, `nm_lengkap`, `email`, `alamat`, `foto`) VALUES
-('Aswar12', 'aswar12', 'Aswar Sumarlin', 'aswarsumarlin@gmail.com', 'jl. segeri', 'aswar.jpg'),
-('firman', 'firman', 'firmansyah', 'firmansyah@gmail.com', 'jl. Paccerakkang', 'firman.jpg'),
-('rany', 'rany', 'rany m pettasolong', 'rany@gmail.com', 'jl. Paccerakkang', 'rany.jpg'),
-('fitri', 'fitri', 'fitri amelia mansyur', 'fitri@gmail.com', 'jl. Paccerakkang', 'fitri.jpg'),
-('Aswar12', 'aswar12', 'Aswar Sumarlin', 'aswarsumarlin@gmail.com', 'jl. segeri', 'aswar.jpg'),
-('firman', 'firman', 'firmansyah', 'firmansyah@gmail.com', 'jl. Paccerakkang', 'firman.jpg'),
-('rany', 'rany', 'rany m pettasolong', 'rany@gmail.com', 'jl. Paccerakkang', 'rany.jpg'),
-('fitri', 'fitri', 'fitri amelia mansyur', 'fitri@gmail.com', 'jl. Paccerakkang', 'fitri.jpg');
+('firman', 'firman', 'firmansyah', 'firmansyahbolong@gmail.com', 'jl. paccerakkang', 'firman.jpg'),
+('aswar', 'aswar', 'Aswar Sumarlin', 'Aswar18@mhs.akba.ac.id', 'jl. poros makasssar', 'aswar.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,7 +77,8 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nm_kategori`) VALUES
-(1, 'baju');
+(1, 'Baju'),
+(2, 'Sepatu');
 
 -- --------------------------------------------------------
 
@@ -121,13 +116,6 @@ CREATE TABLE `keranjang` (
   `jumlah` int(10) NOT NULL,
   `tgl_keranjang` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `keranjang`
---
-
-INSERT INTO `keranjang` (`id_keranjang`, `id_produk`, `nm_produk`, `harga`, `jumlah`, `tgl_keranjang`) VALUES
-(1, 1, 'baju', 10.000, 2, '2021-02-10');
 
 -- --------------------------------------------------------
 
@@ -189,14 +177,29 @@ CREATE TABLE `penilaian` (
 
 CREATE TABLE `produk` (
   `id_produk` int(10) NOT NULL,
-  `id_kategori` int(10) NOT NULL,
   `nm_produk` varchar(50) NOT NULL,
-  `deskripsi` varchar(50) NOT NULL,
+  `deskripsi` text NOT NULL,
   `gambar` varchar(20) NOT NULL,
   `ukuran` enum('S','L','M','XL','XXL','39','40','41') NOT NULL DEFAULT 'S',
   `harga` double(10,3) NOT NULL,
   `stok` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `produk`
+--
+
+INSERT INTO `produk` (`id_produk`, `nm_produk`, `deskripsi`, `gambar`, `ukuran`, `harga`, `stok`) VALUES
+(1, 'BAJU BLOUSE OWLY TOP', '•OWLY TOP •Bahan : BEAUTY CREPE •Ukuran : Allsize Fit to L ( LD 103 )\r\n', 'wq.PNG', 'M', 79.000, 10),
+(2, 'BOXY V-NECK VIONA', '•BAHAN : RAJUT SALUR  •PANJANG : 64 CM  •PANJANG TANGAN : 48 CM  •ALL SIZE VIT TO L', 'DEWD.png', 'L', 65.000, 10),
+(3, 'CELANA CHINO CARGO', '•Bahan : American Drill ( Karakteristik : Tebal , kokoh, tidak melar , menyerap keringat, merupakan jenis kain yg tahan lama & kuat )  •Size : Fit to L  •Panjang : 88 - 90 cm  •Lingkar Pinggang : 60 - 100 ( melar )', 'CCK1.PNG', '41', 64.000, 10),
+(4, 'BAGGY CARGO ALENA', '•	MATERIAL : American Drill ( Twill Import ) Tebal, Adem, Tidak melar , dan Super bagusss bangettttt  •	SIZE : All size fit to XL  •	PANJANG : 90-92 cm   •	LINGKAR PINGGANG : 65 cm ( PINGGANG KARET BELAKANG )', 'BCA.PNG', 'L', 78.000, 10),
+(5, 'KEMEJA FLANEL PRIA', '•	BAHAN : RAJUT SALUR  •	PANJANG : 64 CM  •	PANJANG TANGAN : 48 CM  •	ALL SIZE VIT TO L', 'KFP.png', 'L', 95.000, 12),
+(6, 'OSELA BLOUSE', '•	NAMA BARANG : OSELA BLOUSE  •	BAHAN : MOSHCREPE  •	UKURAN :ALL SIZE FIT TO L **  •	BAJU : 100 CM , PANJANG 50 CM', 'OB.PNG', 'L', 74.000, 10),
+(7, 'BAJU KOKO PRADA BORDIR', '•	Bahan : Katun Prima - Adem - Halus - Tidak Licin - Mudah disetrika / Tidak mudah Kusut - Nyaman dipakai  •	Ukuran : M - Lingkar Dada 108 CM, Panjang 70 CM  L - Lingkar Dada 110 CM, Panjang 71 CM  XL - Lingkar Dada 115 CM, Panjang 74 CM', 'BAJU_KOKO.PNG', 'L', 90.000, 10),
+(8, 'JOGGER PRIA DOUBLE ZIPPER', '•	- Original AZKAR   •	Bahan Nyaman  •	Jahitan Kuat Dan Rapi  •	Bahan Babyterry  •	Cutting Slimfit sehingga kaki terlihat lebih panjang  •	Unisex ( Cewek/Cowok )', 'JOGGER_PRIA.PNG', 'L', 110.000, 12),
+(9, 'DAISY JOGGER PANTS EMBROIDERY', 'Ukuran : All Size   LP : 95Cm  PJ : 85Cm  Bahan : Spandex', 'DAISI_JOGER.PNG', 'M', 20.000, 11),
+(10, 'BOYFRIEND JEANS JESSICA', '•	BAHAN JEANS, HALUS, TIDAK BEGITU TEBAL TAPI JUGA TIDAK TIPIS COCOK UNTUK FORMAL ATAUPUN CASUAL •	PANJANG -/+ 90 cm  •	LINGKAR PINGGANG -/+ 74CM (BELUM MELAR)  •	LINGKAR PAHA -/+ 56CM', 'BJJ.PNG', 'L', 50.000, 11);
 
 -- --------------------------------------------------------
 
@@ -273,8 +276,7 @@ ALTER TABLE `penilaian`
 -- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`),
-  ADD KEY `id_kategori` (`id_kategori`);
+  ADD PRIMARY KEY (`id_produk`);
 
 --
 -- Indeks untuk tabel `provinsi`
@@ -296,7 +298,7 @@ ALTER TABLE `det_pembelian`
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kategori` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`
@@ -308,7 +310,7 @@ ALTER TABLE `kecamatan`
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_keranjang` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `kota`
@@ -332,7 +334,7 @@ ALTER TABLE `penilaian`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
@@ -375,12 +377,6 @@ ALTER TABLE `kota`
 --
 ALTER TABLE `penilaian`
   ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`id_pembeli`) REFERENCES `pembeli` (`id_pembeli`);
-
---
--- Ketidakleluasaan untuk tabel `produk`
---
-ALTER TABLE `produk`
-  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `kategori` (`id_kategori`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

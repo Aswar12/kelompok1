@@ -36,7 +36,7 @@
 <script src="dist/js/jquery.dataTables.min.js"></script>
 <script>
    $(document).ready(function() {
-    $('#aswar').DataTable( {
+    $('#kelompok1').DataTable( {
 		
         "scrollY": 200,
     

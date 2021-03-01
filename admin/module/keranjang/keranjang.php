@@ -7,7 +7,7 @@ $aksi="module/keranjang/aksi_keranjang.php";
 	default:
 		// Tampil Data - mengambil file keranjangshow.php
 		echo"<a href='?module=keranjang&act=tambahdata' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
-		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
+		 <table id='kelompok1' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama Produk</th> <th>Harga</th> <th>Jumlah</th> <th>Tgl_Keranjang</th> <th>Pilihan</th>

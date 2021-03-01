@@ -7,7 +7,7 @@ $aksi="module/det_pembelian/aksi_det_pembelian.php";
 	default:
 		// Tampil Data - mengambil file det_pembelianshow.php
 		echo"<a href='?module=det_pembelian&act=tambahdata' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
-		 <table id='aswar' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
+		 <table id='kelompok1' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Id Keranjang</th> <th>Nama Pembeli</th> <th>Nama Kecamatan</th> <th>alamat</th> <th>status</th> <th>Tgl Pembelian</th> <th>Aksi</th>
